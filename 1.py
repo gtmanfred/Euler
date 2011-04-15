@@ -1,4 +1,4 @@
-def val(num = 1000):
+def Euler_1(num = 1000):
     #aset = set()
     a =[]
     for i in range(num):
@@ -14,4 +14,4 @@ def val(num = 1000):
     return sum(a)
 
 if __name__ == '__main__':
-    print(val(1000))
+    print(Euler_1(1000))
