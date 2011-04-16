@@ -12,12 +12,12 @@ def Euler_2(num = 4000000):
     return ans
 '''
 def Euler_2_2(num = 2**40000):
-    (c,b)=(1,2)
+    (a,b)=(1,2)
     tot = b
     while b<=num:
-        (c,b) = (b,c+b)
-        (c,b) = (b,c+b)
-        (c,b) = (b,c+b)
+        (a,b) = (b,a+b)
+        (a,b) = (b,a+b)
+        (a,b) = (b,a+b)
         if b<=num:
             tot+=b
     return tot
