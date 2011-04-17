@@ -3,6 +3,11 @@ prime_list = [2, 3, 5, 7, 11, 13, 17, 19, 23]   # Ensure that this is initialise
 prime_dict = dict.fromkeys(prime_list, 1)
 lastn      = prime_list[-1]
 
+def fact(num):
+    f = num
+    for x in range(1,num):f = f*x
+    return f
+
 def primes(n):
     alist=[1 for i in range(n+1)]
     alist[0]=0
