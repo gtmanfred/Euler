@@ -1,14 +1,19 @@
-def isprime(n):
-    i =2 
-    if (n==1):
-        return False
-    if (n==2)or(n==3):
-        return True
-    
-    if (n%2 is 0) or (n%3 is 0):
-        return False
-    while i*i<=n:
-        if n%i ==0:
-            return False
-        i +=1
-    return True
+import isprime
+
+def tree(num):
+        ret = []
+            i= 2
+                while (isprime.isprime(num) is False):
+                            if (num%i==0):
+                                            ret = ret+[i]
+                                                        num=num//i
+                                                                    i =1
+                                                                            i
+                                                                            +=1
+                                                                                ret
+                                                                                =
+                                                                                ret
+                                                                                +
+                                                                                [num]
+                                                                                    return
+                                                                                ret
