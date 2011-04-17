@@ -1,8 +1,8 @@
-import isprime
+import maths
 def Euler_5(top=20):
     val =1
     for i in range(1,top+1):
-        if isprime.isprime(i):
+        if maths.isprime(i):
             num = i
             while num<=top:
                 num = num*i
