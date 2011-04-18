@@ -5,6 +5,8 @@ lastn      = prime_list[-1]
 
 def fact(num):
     f = num
+    if num == 0:
+        return 1
     for x in range(1,num):f = f*x
     return f
 
