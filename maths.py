@@ -18,15 +18,28 @@ def primes(n):
     t = 0
     for i in range(2,len(alist)):
         if alist[i]==1:
-            if i>n//2 and t ==0:
-                print(i)
-                t =1
             for x in range(i**2,len(alist),i):
                 alist[x]=0
+         
     for j in range(n+1):
         if alist[j]==1:
             ret = ret+[j]
+    print('done')
     return ret
+
+def primesd(n):
+    alist=[i for i in range(n+1)]
+    adict=dict.fromkeys(alist,1)
+    adict[0]=0
+    adict[1]=0
+    for i in range(2,len(alist)):
+        if adict.get(i):
+            for x in range(i**2,len(alist),i):
+                adict[x]=0
+
+    print('done')
+    return adict
+
 
 def primetree(num):
         if num == 1: return[num]
