@@ -81,7 +81,7 @@ def primetree1(num):
 def tree(num):
     ret = [1]
     i= 2
-    while (isprime(num) is False):
+    while (not isprime(num)):
         if (num%i==0):
             ret = ret+[i]
             ret = ret +[num]
@@ -163,7 +163,7 @@ def all_factors(n):
        thiselt = elts[i]
        thismax = f.count(thiselt)
        powers = [1]
-       for j in xrange(thismax):
+       for j in range(thismax):
            powers.append(powers[-1] * thiselt)
        for d in gen_inner(i+1):
            for prime_power in powers:
@@ -183,9 +183,30 @@ def num_factors(n):
         x = x + 1
         div = div * c
     return div
-'''
-Optimisation notes:
-# Function access FAIRLY slower than Array access is SLIGHTLY slower than local variable access
-# Generators are SLIGHTLY slower than returning a list
-# Dictionary access takes ZERO time
-'''
+
+
+def sumdigs(var):
+    var = str(var)
+    ret=0
+    for i in range(len(var)):
+        ret+=int(var[i])
+    return ret
+
+
+def divs(num):
+    ret ={1}
+    for x in range(2,num//2+2):
+        if not num%x:
+            ret.add(x)
+    return ret
+
+def sums(num):
+    ret = 0
+    if type(num)==type(set()):
+        while len(num):
+            ret+=num.pop()
+    if type(num)==type(list()):
+        for x in range(len(num)):
+            for y in range(len(num[x])):
+                ret+=num[x][y]
+    return ret
