@@ -11,20 +11,8 @@ def fact(num):
     return f
 
 def primes(n):
-    alist=[1 for i in range(n+1)]
-    alist[0]=0
-    alist[1]=0
-    ret =[]
-    t = 0
-    for i in range(2,len(alist)):
-        if alist[i]==1:
-            for x in range(i**2,len(alist),i):
-                alist[x]=0
-         
-    for j in range(n+1):
-        if alist[j]==1:
-            ret = ret+[j]
-    print('done')
+    primesdict = primesd(n)
+    ret = [x for x in primesdict.keys() if primesdict.get(x) is 1]
     return ret
 
 def primesd(n):
