@@ -67,4 +67,4 @@ def primes(end):
 
 
 if __name__=='__main__':
-    print(primes(10**7))
+    a = primes(10**6)
