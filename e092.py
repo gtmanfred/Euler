@@ -4,6 +4,7 @@ def digs(num):
         res,num = res+(num%10)**2,num//10
     return res+(num**2)
 
+
 nums = dict.fromkeys(range(1,10**7+1),0)
 print(len(nums.keys()))
 for i in nums.keys():
