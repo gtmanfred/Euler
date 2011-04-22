@@ -15,7 +15,7 @@ def ispan(n,ds=9):
     check = list(str(x) for x in range(1,ds+1))
     if sorted(digs)==check:return True
     else:return False
-same
+
 
 def fact(num):
     f = num
@@ -28,6 +28,17 @@ def primes(n):
     primesdict = primesd(n)
     ret = [x for x in primesdict.keys() if primesdict.get(x) is 1]
     return ret
+
+def primesd2(n):
+    alist = [i for i in range(3,n+1,2)]
+    alist.insert(0,2)
+    print('start')
+    i = 0
+    while i<len(alist):
+        alist.remove([y for y in range(alist[i]**2,n,alist[i])])
+        print(len(alist))
+        i+=1
+    return alist
 
 def primesd1(n):
     alist = [1 for i in range(n+1)]
@@ -242,4 +253,4 @@ letters={'A':'1','B':'2','C':'3','D':'4','E':'5','F':'6','G':'7','H':'8','I':'9'
 
 
 if __name__=='__main__':
-    a =primesd(10**6)
+    a =primesd2(10**6)
