@@ -1,3 +1,4 @@
+#!/usr/bin/python
 def Euler_52(Max=10**6,mult = 6):
     for i in range(10,Max+1):
         stri = str(i)

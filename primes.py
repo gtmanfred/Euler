@@ -64,3 +64,7 @@ def primes(end):
     primes.extend([i for i in range(s, end, 2) if sieve[i >> 1]])
  
     return primes
+
+
+if __name__=='__main__':
+    print(primes(10**7))

@@ -1,7 +1,21 @@
 import math
+import itertools
 prime_list = [2, 3, 5, 7, 11, 13, 17, 19, 23]   # Ensure that this is initialised with at least 1 prime
 prime_dict = dict.fromkeys(prime_list, 1)
 lastn      = prime_list[-1]
+
+
+def pandigs(i = '123456789',d = 9):
+    ret = set("".join(x) for x in itertools.permutations(i,d))
+    return ret
+
+def ispan(n,ds=9):
+    digs = list(str(n))
+    if len(digs)<ds:return False
+    check = list(str(x) for x in range(1,ds+1))
+    if sorted(digs)==check:return True
+    else:return False
+
 
 def fact(num):
     f = num
@@ -10,13 +24,13 @@ def fact(num):
     for x in range(1,num):f = f*x
     return f
 
-def primes(n):
-    primesdict = primesd(n)
+def primes(n,d=0):
+    primesdict = primesd(n,d)
     ret = [x for x in primesdict.keys() if primesdict.get(x) is 1]
     return ret
 
-def primesd(n):
-    alist=[i for i in range(n+1)]
+def primesd(n,d =0):
+    alist=[i for i in range(d,n+1)]
     adict=dict.fromkeys(alist,1)
     adict[0]=0
     adict[1]=0
@@ -216,3 +230,6 @@ def sums(num):
 
 
 letters={'A':'1','B':'2','C':'3','D':'4','E':'5','F':'6','G':'7','H':'8','I':'9','J':'10','K':'11','L':'12','M':'13','N':'14','O':'15','P':'16','Q':'17','R':'18','S':'19','T':'20','U':'21','V':'22','W':'23','X':'24','Y':'25','Z':'26'}
+
+
+
