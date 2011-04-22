@@ -32,14 +32,10 @@ def primes(n):
 def primesd(n):
     alist=[i for i in range(1,n+1,2)]
     adict=dict.fromkeys(alist,1)
-    adict[0]=0
-    adict[1]=0
+    adict[0],adict[1]=0,0
     for i in range(2,len(alist)):
         if adict.get(i):
-            for x in range(i**2,len(alist),i):
-                adict[x]=0
-
-    print('done')
+            for y in range(i**2,len(alist),i):adict[y] =0
     return adict
 
 
@@ -235,4 +231,4 @@ letters={'A':'1','B':'2','C':'3','D':'4','E':'5','F':'6','G':'7','H':'8','I':'9'
 
 
 if __name__=='__main__':
-    a =primesd(10**7)
+    a =primesd(10**6)
