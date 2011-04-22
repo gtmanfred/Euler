@@ -24,13 +24,13 @@ def fact(num):
     for x in range(1,num):f = f*x
     return f
 
-def primes(n,d=0):
-    primesdict = primesd(n,d)
+def primes(n):
+    primesdict = primesd(n)
     ret = [x for x in primesdict.keys() if primesdict.get(x) is 1]
     return ret
 
-def primesd(n,d =0):
-    alist=[i for i in range(d,n+1)]
+def primesd(n):
+    alist=[i for i in range(1,n+1,2)]
     adict=dict.fromkeys(alist,1)
     adict[0]=0
     adict[1]=0
@@ -233,3 +233,6 @@ letters={'A':'1','B':'2','C':'3','D':'4','E':'5','F':'6','G':'7','H':'8','I':'9'
 
 
 
+
+if __name__=='__main__':
+    a =primesd(10**7)

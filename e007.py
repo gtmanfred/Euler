@@ -1,3 +1,4 @@
+from maths import isprime
 def Euler_7(n = 10001):
     i =1 
     num = 0;
