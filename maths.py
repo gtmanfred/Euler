@@ -47,7 +47,7 @@ def primesd1(n):
     for i in range(3,len(alist),2):
         if alist[i]:
             for y in range(i**2,n,i):alist[y] =0
-    return alist
+    return [alist[x] for x in range(len(alist)) if alist[x]]
 
 
 def primesd(n):
@@ -253,4 +253,4 @@ letters={'A':'1','B':'2','C':'3','D':'4','E':'5','F':'6','G':'7','H':'8','I':'9'
 
 
 if __name__=='__main__':
-    a =primesd2(10**6)
+    a =primesd(10**6)
