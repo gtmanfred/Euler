@@ -5,6 +5,13 @@ prime_dict = dict.fromkeys(prime_list, 1)
 lastn      = prime_list[-1]
 
 
+def hcf(no1,no2):
+    while no1!=no2:
+        if no1>no2:no1-=no2
+        elif no2>no1:no2-=no1
+    return no1
+
+
 def pandigs(i = '123456789',d = 9):
     ret = set("".join(x) for x in itertools.permutations(i,d))
     return ret
