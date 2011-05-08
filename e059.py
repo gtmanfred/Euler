@@ -7,7 +7,10 @@ def Euler_59():
         l = len(pwrd)
         nums = [c^pwrd[x%l] for x,c in enumerate(cipher)]
         text = ''.join(chr(f) for f in nums)
-        if text.find(' the ')>0:return sum(nums)
+        if text.find(' the ')>0:
+            words = ''.join([chr(x) for x in nums])
+            print(words)
+            return sum(nums)
     '''
     for num in aset:
         for i in range(100):

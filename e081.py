@@ -1,4 +1,4 @@
-alist = list(x for x in open('matrix.txt').read().split('\n'))
+alist = list(x for x in open('e081.txt').read().split('\n'))
 blist = list(alist[alist.index(y)].split(',') for y in alist)
 clist = []
 for z in blist[:-1]:
@@ -11,4 +11,4 @@ for i in range(78,-1,-1):
     for i in range(78,-1,-1):
         for j in range(78,-1,-1):
             clist[i][j] += clist[i][j+1] if (clist[i][j+1] < clist[i+1][j]) else clist[i+1][j]
-    print(clist[0][0])
+    print(clist[0])

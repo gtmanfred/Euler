@@ -1,6 +1,6 @@
-import triangle67  
+import e067t
 def Euler_67():
-    return tot(triangle67.tri)
+    return tot(e067t.tri)
 
 def tot(triangle):
     while len(triangle)>1:

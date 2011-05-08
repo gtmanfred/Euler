@@ -1,9 +1,26 @@
 import math
 import itertools
+from itertools import *
+from primes import Primes
+from time import *
 prime_list = [2, 3, 5, 7, 11, 13, 17, 19, 23]   # Ensure that this is initialised with at least 1 prime
 prime_dict = dict.fromkeys(prime_list, 1)
 lastn      = prime_list[-1]
 
+def nextprime(n):
+    """Return the smallest prime larger than or equal to n"""
+    n+=1
+    if n <= 2:
+        return 2
+    if n % 2 == 0:
+        n += 1
+    while not isprime2(n):
+        n += 2
+    return n
+
+def gcd(a,b):
+    if b ==0:return a
+    else:return gcd(b,a%b)
 
 def hcf(no1,no2):
     while no1!=no2:
@@ -36,16 +53,18 @@ def primes(n):
     ret = [x for x in primesdict.keys() if primesdict.get(x) is 1]
     return ret
 
-def primesd2(n):
-    alist = [i for i in range(3,n+1,2)]
-    alist.insert(0,2)
-    print('start')
-    i = 0
-    while i<len(alist):
-        alist.remove([y for y in range(alist[i]**2,n,alist[i])])
-        print(len(alist))
-        i+=1
-    return alist
+def primesd2(n,s = 0):
+    y = 2
+    alist = [0 for j in range(s)]
+    alist += [1 for i in range(n+1-s)]
+    alist[0],alist[1]=0,0
+    yield y
+    for x in range(4,n,2):alist[x]=0
+    for i in range(3,len(alist),2):
+        if alist[i]:
+            for y in range(i**2,n,i):alist[y] =0
+            yield i
+
 
 def primesd1(n):
     alist = [1 for i in range(n+1)]
@@ -54,7 +73,7 @@ def primesd1(n):
     for i in range(3,len(alist),2):
         if alist[i]:
             for y in range(i**2,n,i):alist[y] =0
-    return [alist[x] for x in range(len(alist)) if alist[x]]
+    return [x for x in range(len(alist)) if alist[x]]
 
 
 def primesd(n):
@@ -67,6 +86,24 @@ def primesd(n):
     print('done')
     return adict
 
+def primedivs(n=10**7,t = time()):
+    alist=[[] for i in range(0,n+1)]
+    alist[0],alist[1] = [0],[1]
+    for i in range(2,len(alist),2):
+        x = i//2
+        alist[i]+=[2]
+        while x%2==0:
+            alist[i]+=[2];x=x//2
+    print('twos done',time()-t)
+    for i in range(3,(n+1)//2+1,2):
+        if alist[i]==[]:
+            for y in range(i,len(alist),i):
+                x = y//i
+                alist[y]+=[i]
+                while x%i==0:
+                    alist[y]+=[i];x=x//i
+    print('done',time()-t)
+    return(alist)
 
 def primetree(num):
         if num == 1: return[num]
@@ -221,7 +258,7 @@ def num_factors(n):
         c = 1
         while not n % prime(x):
             c = c + 1
-            n = n / prime(x)
+            n = n // prime(x)
         x = x + 1
         div = div * c
     return div
@@ -238,7 +275,7 @@ def sumdigs(var):
 def divs(num):
     ret ={1}
     for x in range(2,num//2+2):
-        if not num%x:
+        if num%x==0:
             ret.add(x)
     return ret
 
@@ -254,10 +291,53 @@ def sums(num):
     return ret
 
 
-letters={'A':'1','B':'2','C':'3','D':'4','E':'5','F':'6','G':'7','H':'8','I':'9','J':'10','K':'11','L':'12','M':'13','N':'14','O':'15','P':'16','Q':'17','R':'18','S':'19','T':'20','U':'21','V':'22','W':'23','X':'24','Y':'25','Z':'26'}
+letters={'A':'1','B':'2','C':'3','D':'4','E':'5','F':'6','G':'7','H':'8',\
+        'I':'9','J':'10','K':'11','L':'12','M':'13','N':'14','O':'15',\
+        'P':'16','Q':'17','R':'18','S':'19','T':'20','U':'21','V':'22',\
+        'W':'23','X':'24','Y':'25','Z':'26'}
+
+def findallfactors(num, maxDiv=None):
+	factors = []
+ 
+	if maxDiv == None:
+		maxDiv =int(num ** .5) + 1
+ 
+	while True:
+		fst = 2 if len(factors)==0 else factors[-1]
+		r = 2 if fst!=2 else 1
+		for i in range(fst, min(maxDiv, int(num ** .5) + 1),r):
+			# print 'checking', i
+			if num % i==0:
+				factors.append(int(i))
+				num = num // i
+				break
+		else:
+			if num != 1:
+				factors.append(num)
+			break
+	return factors
+
+def divsieve(n):
+    primes = primesd1(n+1)
+    primes.insert(1,0)
+    alist=[i for i in range(n+1)]
+    adict=dict.fromkeys(alist,2)
+    adict[0],adict[1]=0,1
+    for i in range(2,n+1):
+        for j in range(i*2,n+1,i):
+            adict[j] = adict.get(j)+1
+        '''
+        for j in range(i*3,i**2+1,i):
+            if j>n:break
+            adict[j] = adict.get(j)+adict.get(i)-1
+        '''
+    print('done')
+    return adict
 
 
 
 
 if __name__=='__main__':
-    a =primesd(10**6)
+    t = time()
+    primedivs(10**5,t)
+    print(time()-t)
