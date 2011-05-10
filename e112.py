@@ -14,7 +14,6 @@ def Euler_112(perc = 99/100):
             last = i
         if up and down:count+=1
         bouncy = count/num
-        if bouncy>.98:print(bouncy)
     return num
 
 if __name__=='__main__':

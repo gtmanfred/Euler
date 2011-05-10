@@ -8,7 +8,6 @@ from primes import Primes
 p = Primes(10**4)
 def Euler_60():
     for i in p.pList(10**4):
-        if i > 13:break
         print(i)
         p1 = sorted(set(j for j in p.pList(10**4) if j>i and \
             p.isPrime(str(j)+str(i)) and p.isPrime(str(i)+str(j))))

@@ -1,4 +1,4 @@
-alist = list(x for x in open('e081.txt').read().split('\n'))
+alist = list(x for x in open('matrix.txt').read().split('\n'))
 blist = list(alist[alist.index(y)].split(',') for y in alist)
 clist = []
 for z in blist[:-1]:

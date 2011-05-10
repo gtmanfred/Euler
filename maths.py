@@ -65,7 +65,6 @@ def primesd2(n,s = 0):
             for y in range(i**2,n,i):alist[y] =0
             yield i
 
-
 def primesd1(n):
     alist = [1 for i in range(n+1)]
     alist[0],alist[1]=0,0

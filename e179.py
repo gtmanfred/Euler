@@ -3,7 +3,7 @@ from time import *
 t = time()
 def Euler_179(top = 10**7):
     divs = primedivs(top,t)
-    count = 0
+    count = 1 #starts at one for 2 and 3 which are skipped because they are prime
     print('start')
     for i in range(1,top):
         if i%10**5==0:print(i//10**5,time()-t)
