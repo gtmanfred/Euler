@@ -4,6 +4,7 @@ from maths import primesd,isprime2
 primesdict = primesd(10**4)
 p = [x for x in primesdict.keys() if primesdict.get(x) is 1]
 '''
+from maths import isprime2,primes
 from primes import Primes
 p = Primes(10**4)
 def Euler_60():
@@ -21,7 +22,23 @@ def Euler_60():
                     p4 = sorted(set(m for m in p3 if m>l and \
                         p.isPrime(str(m)+str(l)) and p.isPrime(str(l)+str(m))))
                     if len(p4):return [i,j,k,l,p4[0],[i+j+k+l+p4[0]]]
+def e60():
+    for i in primes(10**4):
+        print(i)
+        p1 = sorted(set(j for j in p.pList(10**4) if j>i and \
+            isprime2(str(j)+str(i)) and isprime2(str(i)+str(j))))
+        for j in p1:
+            p2 = sorted(set(k for k in p1 if k>j and \
+                isprime2(str(j)+str(k)) and isprime2(str(k)+str(j))))
+            for k in p2:
+                p3 = sorted(set(l for l in p2 if l>k and \
+                    isprime2(str(k)+str(l)) and isprime2(str(l)+str(k))))
+                for l in p3:
+                    p4 = sorted(set(m for m in p3 if m>l and \
+                        isprime2(str(m)+str(l)) and isprime2(str(l)+str(m))))
+                    if len(p4):return [i,j,k,l,p4[0],[i+j+k+l+p4[0]]]
 
 
 if __name__=='__main__':
- print(Euler_60())
+    print(e60())
+    #print(Euler_60())

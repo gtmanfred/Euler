@@ -1,6 +1,6 @@
 import e067t
-def Euler_67():
-    return tot(e067t.tri)
+def e67(tri = e067t.tri):
+    return tot(tri)
 
 def tot(triangle):
     while len(triangle)>1:
@@ -10,8 +10,8 @@ def tot(triangle):
 def reducetri(triangle):
     lastrow=triangle[-1]
     for index in range(len(triangle)-1):
-        triangle[-2][index] += max(lastrow[index:index + 2])
+        triangle[-2][index] += min(lastrow[index:index + 2])
     del triangle[-1]
 
 if __name__=='__main__':
-    print(Euler_67())
+    print(e67())

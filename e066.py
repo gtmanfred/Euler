@@ -16,5 +16,4 @@ def Euler_66(top = 1000):
     return ret.index(max(ret))
 
 if __name__=='__main__':
-    print(Euler_66(7))
     print(Euler_66())
