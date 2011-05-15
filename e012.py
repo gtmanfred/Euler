@@ -1,4 +1,4 @@
-import maths
+from maths import *
 
 def Euler_12(num=500):
     facts=[1]
@@ -6,7 +6,7 @@ def Euler_12(num=500):
     b=True
     while b:
         n = i*(i+1)//2
-        if maths.num_factors(n)>num:
+        if numfacts(n)>num:
             b=False
             return n
         i +=1
