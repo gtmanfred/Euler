@@ -1,8 +1,9 @@
+from maths import isprime2
 def Euler_3(num=600851475143):
     primes = []
     i =2 
     while i <= num:
-        if num%i ==0 and isprime(i):
+        if num%i ==0 and isprime2(i):
             num = num//i
             primes = primes +[i] 
             i = 2

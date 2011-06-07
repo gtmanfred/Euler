@@ -1,3 +1,4 @@
+from memorize import *
 def digs(num):
     res = 0 
     while num > 9:
