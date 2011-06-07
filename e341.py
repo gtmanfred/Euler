@@ -1,29 +1,18 @@
-from time import time
-cubes = [i**3 for i in range(1,10**3)]
-def e341(target = 153506976):
-    t = time()
-    ref={1:1,3:2,5:3,}
-    keys = list(ref.keys())
-    mini = 10000
-    j = 5
-    jx = 2
-    b = True
-    test = target/10**4
-    for i in range(4,target+1):
-        if i>mini:mini+=10000;print('i:',i,'tdiff:',i/target,len(keys)+1,\
-                'time',(time()-t)*test);t = time()
-
-        if j<i:
-            jx += 1 
-            j = keys[jx]
-        k = ref.get(j)
-        ref[k+keys[-1]]=i
-        keys+=[k+keys[-1]]
-        if ref.get(keys[-1])>=target:return keys[-1]
-    x = [10**6<=i for i in keys]
-    print(ref.get(keys[x.index(True)]))
-    return ref
-    
-    
+def e341(target = (10**3)):
+    n = {1:1,3:2,5:3,8:4,11:5,15:6,19:7}
+    nx = [list(i) for i in zip(n.keys(),n.values())]
+    i = 8
+    j = [nx[i][0] for i in range(len(n))].index(i)
+    while nx[-1][0]<target**3:
+        nx+=[[nx[-1][0]+nx[j][1],i]]
+        i+=1
+        if i>nx[j][0]:
+            j +=1 
+    tot = 0
+    print(len(nx),target**3)
+    for i in range(1,target):
+        test = i**3
+        x = [test<=k for k in nx
+    return tot
 if __name__=='__main__':
-    e341()
+    print(e341())
