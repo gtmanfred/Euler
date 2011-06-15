@@ -1,5 +1,6 @@
 from e341 import g
 try:
+    r = 1
     gns = [1,2,2]
     i = 3
     tot = t =0
