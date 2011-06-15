@@ -33,6 +33,10 @@ def phi(n):
     for k in range(1,n):
         if gcd(k,n)==1:test+=1
     return test
+<<<<<<< HEAD
+=======
+@memo
+>>>>>>> e257624259117f71e86d17b2da475fd6b2deb6d8
 def chain(i):
     if i == 1:return 1
     c = chain(phi(i))+1
