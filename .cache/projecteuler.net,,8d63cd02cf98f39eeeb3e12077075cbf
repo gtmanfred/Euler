@@ -1,0 +1,134 @@
+status: 200
+content-length: 14366
+content-location: http://projecteuler.net
+x-powered-by: PHP/5.2.17
+vary: Accept-Encoding,User-Agent
+server: Apache/2
+-content-encoding: gzip
+date: Thu, 19 May 2011 23:46:08 GMT
+content-type: text/html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="author" content="Colin Hughes" />
+<meta name="description" content="A website dedicated to the fascinating world of mathematics and programming" />
+<meta name="keywords" content="programming,mathematics,problems,puzzles" />
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>Project Euler</title>
+<link rel="stylesheet" type="text/css" href="style_main.css" />
+<link rel="shortcut icon" href="http://projecteuler.net/favicon.ico" />
+</head>
+
+<body>
+<div id="top" class="noprint">
+
+   <div class="rbroundbox1">
+   <div class="rbtop"><div></div></div>
+   <div class="rbcontent">
+
+      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+      <tr>
+         <td style="padding:10px;">
+            <img src="images/logo.jpg" alt="Project Euler" title="Project Euler" />
+         </td>
+      </tr>
+      </table>
+      <div id="menu_bar">
+         <ul>
+<li id="current"><img src="images/icon_about.png" style="border:none;vertical-align:middle;" alt="About" /> <a href="index.php?section=about" title="About" accesskey="h"><span>About</span></a></li>
+<li><img src="images/icon_register.png" style="border:none;vertical-align:middle;" alt="Register" /> <a href="index.php?section=register" title="Register" accesskey="1"><span>Register</span></a></li>
+<li><img src="images/icon_problems.png" style="border:none;vertical-align:middle;" alt="Problems" /> <a href="index.php?section=problems" title="Problems" accesskey="2"><span>Problems</span></a></li>
+<li><img src="images/icon_login.png" style="border:none;vertical-align:middle;" alt="Login" /> <a href="index.php?section=login" title="Login" accesskey="3"><span>Login</span></a></li>
+         </ul>
+      </div>
+
+   </div><!-- /rbcontent -->
+   <div class="rbbot"><div></div></div>
+   </div><!-- /rbroundbox -->
+
+</div>
+
+<div id="main_page">
+   <br />
+   <div class="rbroundbox2">
+   <div class="rbtop"><div></div></div>
+   <div class="rbcontent">
+<h2>About Project Euler</h2>
+<img src="images/euler_main.jpg" alt="Leonhard Euler (1707-1783)" style="border:1px solid black;margin:10px;float:right;width:150px;" />
+<h3>What is Project Euler?</h3>
+<p>Project Euler is a series of challenging mathematical/computer programming problems that will require more than just mathematical insights to solve. Although mathematics will help you arrive at elegant and efficient methods, the use of a computer and programming skills will be required to solve most problems.<br /><br />
+The motivation for starting Project Euler, and its continuation, is to provide a platform for the inquiring mind to delve into unfamiliar areas and learn new concepts in a fun and recreational context.</p>
+<br />
+<h3>Who are the problems aimed at?</h3>
+<p>The intended audience include students for whom the basic curriculum is not feeding their hunger to learn, adults whose background was not primarily mathematics but had an interest in things mathematical, and professionals who want to keep their problem solving and mathematics on the edge.</p>
+<br />
+<h3>Can anyone solve the problems?</h3>
+<p>The problems range in difficulty and for many the experience is inductive chain learning. That is, by solving one problem it will expose you to a new concept that allows you to undertake a previously inaccessible problem. So the determined participant will slowly but surely work his/her way through every problem.</p>
+<br />
+<h3>How do I know where should I start?</h3>
+<p>That depends on your background. In the Problems table you will be able to see how many people have solved each problem. As a general rule of thumb the more people that have solved it, the easier it is.</p>
+<br />
+<h3>I've written my program but should it take days to get to the answer?</h3>
+<p>Absolutely not! Each problem has been designed according to a "one-minute rule", which means that although it may take several hours to design a successful algorithm with more difficult problems, an efficient implementation will allow a solution to be obtained on a modestly powered computer in less than one minute.</p>
+<br />
+<h3>Does it matter if it takes more than one minute to solve?</h3>
+<p>Of course not, but that should provide the impetus to return to the problem and see how you can improve your approach. But remember that once you've solved a particular problem you will be able to access a thread relating to that problem and it is here that you may be able to pick some tips from others that have solved it.</p>
+<br />
+<h3>I solved it by using a search engine, does that matter?</h3>
+<p>Making use of the internet to research a problem is to be encouraged as there could be hidden treasures of mathematics to be discovered beneath the surface of many of these problems. However, there is a fine line between researching ideas and using the answer you found on another website. If you photocopy a crossword solution then what have you achieved?</p>
+<br />
+<h3>I've checked my program ten times now and I keep getting told my answer is wrong! Have you made a mistake?</h3>
+<p>With newly released problems it is quite possible that a small error may have slipped through the net, or maybe the wording is slightly ambiguous and the problem has not been explained as well as it could. However, when so many people have hit the target and one marksman misses ten times on the run, he/she can hardly shoot his/her own foot and conclude that because the gun is working properly the fault must lie in the target.</p>
+<br />
+<h3>Do you have any hints on solving problems?</h3>
+<p>Read the details of the problem very carefully and make note of any example cases given. Experiment with pencil and paper to get a feel for the ideas behind the problem. If the ideas are new to you, use the internet or books to get some background; the problem should contain clues as to what to look-up. Try writing a program to generate for simple cases and check that your output agrees with the example cases; this will confirm you've understood the problem and are heading in the right direction. Based on this try to extrapolate to estimate the time it will take to get the final answer and if it's going to take significantly more than a minute rethink your strategy.</p>
+<br />
+<h3>How did it all start?</h3>
+<p>Project Euler was started by Colin Hughes (a.k.a. euler) in October 2001 as a sub-section on <a href="http://mathschallenge.net">mathschallenge.net</a>. Who could have known how popular these types of problems would turn out to be? Since then the membership has continued to grow and Project Euler moved to its own domain in 2006.</p>
+<br />
+<h3>Who runs Project Euler?</h3>
+<p>Ideas for new problems come from our own members and they are developed by a team of hard working and talented mathematicians and programmers. So to put it simply, it is the members that run Project Euler.</p>
+<br />
+<h3>Can I make a donation?</h3>
+<p>Absolutely! Project Euler is entirely financed by its own members, so if you have enjoyed the problems and would like to give something back by helping with the running costs then any donations are gratefully received.</p>
+   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+<div style="text-align:center;">
+   <input type="hidden" name="cmd" value="_s-xclick" />
+   <input type="image" src="https://www.paypal.com/en_GB/i/btn/x-click-but04.gif" style="border:none;" name="submit" alt="PayPal - The safer, easier way to pay online." />
+   <img alt="" style="border:none;" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
+   <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+" />
+</div>
+   </form>
+<br />
+<h3>Where did all the cool icons come from?</h3>
+<p>They are called the Boomy Icon Set and are designed by Milosz Wlazlo (<a href="http://miloszwl.deviantart.com" target="_blank">http://miloszwl.deviantart.com</a>).</p>
+<br />
+<p style="text-align:center;font-size:110%;"><i>&quot;Project Euler exists to encourage, challenge, and develop the skills and enjoyment of anyone with an interest in the fascinating world of mathematics.&quot;</i></p>
+<br />
+<p>In order to track your progress it is necessary to setup an account and have Cookies enabled. If you already have an account then <a href='index.php?section=login' title='Login'>login</a>, otherwise please <a href='index.php?section=register' title='Register'>register</a>.</p><p>As the problems are challenging, you may wish to <a href='index.php?section=problems' title='View Problems'>view the problems</a> before registering by clicking .</p><div style="margin:0 20px;border:2px solid #bbb;background-color:#e9e9fd;padding:10px;font-size:80%;">
+   <p><strong>DISCLAIMER</strong></p>
+   <p>The popularity of Project Euler has increased tremendously over the years since its inception through the concerted effort of numerous people.</p>
+   <p>Members have generally taken pride in showing their achievements. The obvious place to do so is the forum that is set up for each problem. However the increasing popularity has also been attracting people with a different agenda. With so many internet sites publishing answers for the PE problems instead of using the forum on this site, some people now seem to take pride in gathering and submitting those answers for whatever reason.</p>
+   <p>It is humanly impossible for Project Euler, or indeed any member, to reliably differentiate those people from members that have solved the problems under their own steam. The ranking lists on Project Euler should be interpreted for what they are: an indication of the number of correct answers submitted by the member in question and validated by our answer checker. Individual members themselves know best what they have achieved on their own. Laying too much stress on competition might spoil the fun of problem solving which is one of the purposes of Project Euler. Also, any claim from a member about his own achievement cannot be supported as trustworthy by Project Euler. If critical, other means from third parties would be required to verify such claims.</p>
+   <p>Providing quality problems for entertainment and educational purposes will continue to be the main goal of Project Euler, regardless of the intentions of a minority of the members.</p>
+</div>
+<br />
+<br />
+   </div><!-- /rbcontent -->
+   <div class="rbbot"><div></div></div>
+   </div><!-- /rbroundbox -->
+</div>
+
+<div id="bottom" class="noprint">
+<a href="index.php?section=copyright">Project Euler Copyright Information</a>
+<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+   <Work rdf:about="">
+      <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/uk/" />
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   </Work>
+   <License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/uk/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/><requires rdf:resource="http://web.resource.org/cc/ShareAlike"/></License></rdf:RDF> -->
+</div>
+</body>
+</html>

@@ -4,8 +4,11 @@ from maths import primesd,isprime2
 primesdict = primesd(10**4)
 p = [x for x in primesdict.keys() if primesdict.get(x) is 1]
 '''
-from maths import isprime2,primes
+from sys import stderr
+from time import time
+from maths import isprime2,primes,primesd,primesd3,isprime
 from primes import Primes
+t = time()
 p = Primes(10**4)
 def Euler_60():
     for i in p.pList(10**4):
@@ -23,9 +26,11 @@ def Euler_60():
                         p.isPrime(str(m)+str(l)) and p.isPrime(str(l)+str(m))))
                     if len(p4):return [i,j,k,l,p4[0],[i+j+k+l+p4[0]]]
 def e60():
-    for i in primes(10**4):
-        print(i)
-        p1 = sorted(set(j for j in p.pList(10**4) if j>i and \
+    x = primesd3(10**4)
+    print('{:>4}'.format('start'))
+    for i in x:
+        print(str(i))
+        p1 = sorted(set(j for j in primesd3(10**4) if j>i and \
             isprime2(str(j)+str(i)) and isprime2(str(i)+str(j))))
         for j in p1:
             p2 = sorted(set(k for k in p1 if k>j and \
@@ -40,5 +45,5 @@ def e60():
 
 
 if __name__=='__main__':
-    print(e60())
-    #print(Euler_60())
+    t = time()
+    print(e60(),time()-t)

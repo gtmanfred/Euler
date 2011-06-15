@@ -4,17 +4,11 @@ import itertools
 from itertools import *
 from primes import Primes
 from time import *
+from memorize import *
 prime_list = [2, 3, 5, 7, 11, 13, 17, 19, 23]   # Ensure that this is initialised with at least 1 prime
 prime_dict = dict.fromkeys(prime_list, 1)
 lastn      = prime_list[-1]
 
-def memorize(f):
-    cache = {}
-    def helper(x):
-        if x not in cache:            
-            cache[x] = f(x)
-        return cache[x]
-    return helper
 
 def nextprime(n):
     """Return the smallest prime larger than or equal to n"""
@@ -60,6 +54,24 @@ def fact(num):
 def primes(n):
     primesdict = primesd(n)
     ret = [x for x in primesdict.keys() if primesdict.get(x) is 1]
+    return ret
+def primesd3(n):
+    x = int(n**.5)
+    if n>5*10**7:
+        t = n//10**7
+        alist = [0,0,1]
+        while t>0:
+            if t==1:alist+=[1,0]*((10**7)//2-1)
+            else:alist += [1,0]*((10**7)//2)
+            t-=1
+    else:alist = [0,0,1]+[1,0]*((n-1)//2)
+    ret = [2]
+    nmn = 1000
+    for i in range(3,len(alist),2):
+        if i>nmn:nmn+=1000;print(i/n,end='\r')
+        if alist[i]:
+            ret+=[i]
+            for y in range(i**2,n,i):alist[y] =0
     return ret
 
 def primesd2(n,s = 0):
@@ -128,14 +140,17 @@ def primetree(num):
                 break
         return powers
 
-
+def isprime3(num, primes = [2,3,5,7,11,13,17,19]):
+    if num in primes:return True
+    for i in primes:
+        if nums%i==0:return False
+    
 
 def isprime2(num):
         if type(num) == str:num = int(num)
         if num == 2: return True
         if num < 2 or num % 2 == 0: return False
         return not any(num % i == 0 for i in range(3,int(math.sqrt(num))+1, 2))
-
         
 def isprime1(n):
     i =2 
@@ -356,11 +371,14 @@ def divsieve(n):
 
 if __name__=='__main__':
     t = time()
-    print(len(primesd(10**6)),time()-t)
-    t = time()
-    print(len(primesd1(10**6)),time()-t)
-    t = time()
-    p = Primes(10**6)
-    a = p.pList()
+    a = (primesd3(10**8))
     print(len(a),time()-t)
-
+    t = time()
+    a = list(primesd2(10**7))
+    print(len(a),time()-t)
+    t = time()
+    a = primesd1(10**6)
+    print(len(a),time()-t)
+    t = time()
+    a = primesd(10**6)
+    print(len(a),time()-t)

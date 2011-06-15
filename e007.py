@@ -1,5 +1,8 @@
-from maths import isprime
+from maths import isprime,primesd3
 def Euler_7(n = 10001):
+    p = primesd3(10**6)
+    print()
+    return p[n-1]
     i =1 
     num = 0;
     while i<n:
