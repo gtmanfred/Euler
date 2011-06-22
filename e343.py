@@ -7,15 +7,15 @@ from math import ceil
 from memorize import memo
 from maths import roots
 def e343(n = 2*10**6):
-    a = [1 + k**3 for k in range(n + 1)]
+    alist = [1 + k**3 for k in range(n + 1)]
     primes = primesd3(n + 2)
     print()
     for p in primes:
-        for s in roots(p):
-            for v in range(s, n + 1, p):
-                while a[v] > p and a[v] % p == 0:
-                    a[v] //= p
-    return sum(a) - n - 1
+        for i in roots(p):
+            for j in range(i, n + 1, p):
+                while alist[j] > p and alist[j] % p == 0:
+                    alist[j] //= p
+    return sum(alist) - n - 1
 
 def e343_test(top=2*10**6):
     global primes
