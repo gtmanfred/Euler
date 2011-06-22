@@ -8,7 +8,14 @@ from memorize import *
 prime_list = [2, 3, 5, 7, 11, 13, 17, 19, 23]   # Ensure that this is initialised with at least 1 prime
 prime_dict = dict.fromkeys(prime_list, 1)
 lastn      = prime_list[-1]
-
+def roots(p):
+    """For p prime return all 0 <= x < p satisfying (1+x**3)%p == 0]"""
+    if p % 3 != 1: return [p - 1]
+    else:
+        for a in range(2, p):
+            x = pow(a, (p - 1) // 3, p)
+            if x != 1:
+                return[p - x, (-x * x) % p, p - 1]
 
 def nextprime(n):
     """Return the smallest prime larger than or equal to n"""
@@ -371,10 +378,10 @@ def divsieve(n):
 
 if __name__=='__main__':
     t = time()
-    a = (primesd3(10**8))
+    a = (primesd3(10**6))
     print(len(a),time()-t)
     t = time()
-    a = list(primesd2(10**7))
+    a = list(primesd2(10**6))
     print(len(a),time()-t)
     t = time()
     a = primesd1(10**6)

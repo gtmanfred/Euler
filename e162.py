@@ -13,3 +13,4 @@ def e162(left, start, Z=0, O=0, A=0):
     return s
 if __name__=='__main__':
     print(hex(sum(e162(i,i) for i in range(17))).upper()[2:])
+    print((sum(e162(i,i) for i in range(17))))
