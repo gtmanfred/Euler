@@ -1,3 +1,15 @@
+from maths import ispal
+def e004(d=3):
+    pals = []
+    #tmp = list(range(999,100,-1))
+    for i,x in enumerate(tmp):
+        for y in tmp[i:]:
+            if ispal(x*y):pals+=[x*y]
+    return max(pals)
+
+def oneline():
+    return max([x*y for x in range(999,99,-1) for y in range(999,99,-1) if ispal(x*y)])
+
 def Euler_4(d=3):
     n = 10**d
     n2 =n//10 
@@ -10,7 +22,7 @@ def Euler_4(d=3):
                     ans = i*j
     return ans
 
-def ispal(num):
+def ispal1(num):
     num = str(num)
     while len(num)>1:
         if num[0] is not num[len(num)-1]:
@@ -20,4 +32,5 @@ def ispal(num):
 
 
 if __name__=='__main__':
-    print(Euler_4())
+    print(e004())
+    #print(Euler_4())

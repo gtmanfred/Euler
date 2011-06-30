@@ -1,4 +1,11 @@
 from maths import isprime,primesd3
+from allsieve import primesfrom2to as sieve
+def e007(n=10001):
+    s = 10
+    tmp = sieve(s)
+    while len(tmp)<n:s*=10;tmp = sieve(s)
+    return tmp[n-1]
+
 def Euler_7(n = 10001):
     p = primesd3(10**6)
     print()
@@ -22,4 +29,5 @@ def isprime(n):
         return True
 
 if __name__=='__main__':
-    print(Euler_7())
+    print(e007())
+#    print(Euler_7())

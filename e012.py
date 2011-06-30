@@ -1,5 +1,6 @@
 from maths import *
 
+
 def Euler_12(num=500):
     facts=[1]
     i=1

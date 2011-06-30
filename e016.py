@@ -1,3 +1,5 @@
+def e016(d=2,e=1000):
+    return sum([int(i) for i in str(d**e)])
 def Euler_16(dig=2,exp=1000):
     var = sums(str(dig**exp))
     '''
@@ -16,4 +18,5 @@ def sums(num):
     return ret
 
 if __name__=='__main__':
-    print(Euler_16())
+    print(e016())
+    #print(Euler_16())

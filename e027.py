@@ -27,12 +27,13 @@ primes = maths.primesd(100000)
 def Euler_27(numa=1000,numb=1000):
     big = 0
     for a in range(-numa,numa):
+        print(a/1000,end='\r')
         for b in range(-numb,numb):
             n = 0
             val = n**2+n*a+b
-            if maths.isprime(val):
+            if maths.isprime2(val):
                 num = 0
-                while maths.isprime(val):
+                while maths.isprime2(val):
                     num+=1
                     n+=1
                     val = n**2+n*a+b
@@ -40,7 +41,8 @@ def Euler_27(numa=1000,numb=1000):
                     big = n
                     biga = a
                     bigb = b
-    return [bigb* biga]
+    print()
+    return [bigb,biga,big]
 
 if __name__=='__main__':
     print(Euler_27())

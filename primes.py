@@ -1,3 +1,50 @@
+def isPrime(num):
+	if type(num)==type('str'):num=int(num)
+	if num < 10:
+		if num < 2:
+			return False
+		if num < 4:
+			return True
+		if num % 2 == 0:
+			return False
+		if num < 9:
+			return True
+		return False
+	if num % 2 == 0:
+		return False
+	if num % 3 == 0:
+		return False
+	if num % 5 == 0:
+		return False
+	tmp = 7
+	while tmp**2 <= num:
+		if num % tmp == 0:
+			return False
+		tmp += 4
+		if num % tmp == 0:
+			return False
+		tmp += 2
+		if num % tmp == 0:
+			return False
+		tmp += 4
+		if num % tmp == 0:
+			return False
+		tmp += 2
+		if num % tmp == 0:
+			return False
+		tmp += 4
+		if num % tmp == 0:
+			return False
+		tmp += 6
+		if num % tmp == 0:
+			return False
+		tmp += 2
+		if num % tmp == 0:
+			return False
+		tmp += 6
+	return True
+
+
 class Primes:
 	''' This class provides numerous functions for prime numbers
 	'''
@@ -5,8 +52,8 @@ class Primes:
 	def __init__(self, num=0):
 		self.maxPrime = 0
 		self.pSieve2 = []
-		self.plist = []
 		self.default = num
+		self.plist = []
 		return
 
 	def sieve(self, num=-1):
@@ -14,37 +61,36 @@ class Primes:
 			The data structure that stores this is internal and
 			subject to change
 		'''
-		if num is -1:
+		if num == -1:
 			num = self.default
 		if self.maxPrime >= num:
 			return
 		oldMax, self.maxPrime = self.maxPrime, num
 		listEnd = self.maxPrime//2
-		if oldMax is 0:
+		if oldMax == 0:
 			self.pSieve2 = [True for i in range(0, listEnd+1)]
 			self.pSieve2[0] = False # set 1 as not prime
 		else:
 			self.pSieve2.extend([True for i in range(oldMax//2, listEnd+1)])
-			print(len(self.pSieve2))
 		for ind in range(1,listEnd):
 			lowVal = 2 * (ind**2 + ind)
 			if lowVal > listEnd:
 				break
-			if self.pSieve2[ind] is True:
+			if self.pSieve2[ind] == True:
 				while lowVal <= oldMax//2:
 					lowVal += 2*ind + 1
 				for x in range(lowVal, listEnd+1, 2*ind + 1):
 					self.pSieve2[x] = False
 		return
 
-	def pList(self, num=-1,minval=0):
+	def pList(self, num=-1):
 		''' Generate a list of prime numbers
 		'''
-		if num is -1:
+		if num == -1:
 			num = self.default
 		if self.maxPrime < num:
 			self.sieve(num)
-		if len(self.plist) is 0:
+		if len(self.plist) == 0:
 			self.plist.append(2)
 			self.plist.append(3)
 			lowVal = 7
@@ -62,62 +108,17 @@ class Primes:
 		for x in range(self.plist[-1]+1, num+1, 1):
 			if self.isPrime(x):
 				self.plist.append(x)
-		if minval:bot=self.plist.index(minval)
-		else:bot = 0
-		return self.plist[bot:]
+		return self.plist
 
 	def isPrime(self,num):
 		''' Test if a single input number is prime
 		'''
-		if type(num)==type('str'):num = int(num)
 		if num <= self.maxPrime:
-			if num % 2 is 0:
-				return True if num is 2 else False
+			if num % 2 == 0:
+				return True if num == 2 else False
 			if num <= self.maxPrime:
 				return self.pSieve2[num//2]
-		if num < 10:
-			if num < 2:
-				return False
-			if num < 4:
-				return True
-			if num % 2 is 0:
-				return False
-			if num < 9:
-				return True
-			return False
-		if num % 2 is 0:
-			return False
-		if num % 3 is 0:
-			return False
-		if num % 5 is 0:
-			return False
-		tmp = 7
-		while tmp**2 <= num:
-			if num % tmp is 0:
-				return False
-			tmp += 4
-			if num % tmp is 0:
-				return False
-			tmp += 2
-			if num % tmp is 0:
-				return False
-			tmp += 4
-			if num % tmp is 0:
-				return False
-			tmp += 2
-			if num % tmp is 0:
-				return False
-			tmp += 4
-			if num % tmp is 0:
-				return False
-			tmp += 6
-			if num % tmp is 0:
-				return False
-			tmp += 2
-			if num % tmp is 0:
-				return False
-			tmp += 6
-		return True
+		return isPrime(num)
 
 class PosPrimes:
 	''' Iterator that returns only possible primes using wheel factorization
@@ -138,7 +139,7 @@ class PosPrimes:
 
 	def __next__(self):
 		if self.current < self.initial[-1]:
-			if self.current is 0:
+			if self.current == 0:
 				self.current = self.initial[0]
 			else:
 				self.current = self.initial[self.initial.index(self.current)+1]
@@ -171,6 +172,6 @@ class PrimesIter:
 				if prime**2 > tmp:
 					self.plist.append(tmp)
 					return tmp
-				if tmp%prime is 0:
+				if tmp%prime == 0:
 					break
 		raise StopIteration

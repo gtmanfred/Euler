@@ -1,3 +1,5 @@
+def e001(top=1000):
+    return sum([i for i in range(1,top) if i%5==0 or i%3==0])
 def Euler_1(num = 1000):
     #aset = set()
     a =[]
@@ -14,4 +16,5 @@ def Euler_1(num = 1000):
     return sum(a)
 
 if __name__ == '__main__':
-    print(Euler_1(1000))
+    print(e001())
+    #print(Euler_1(1000))

@@ -1,5 +1,16 @@
 import maths
 import names
+from maths import letters
+def e022(t = 'e022.txt'):
+    with open(t) as file:
+        f = file.read().split('","')
+        f[0],f[-1]=f[0][1:],f[-1][:-1]
+        f = sorted(f)
+        sums = 0
+        for i,j in enumerate(f):
+            score = sum([int(letters.get(x)) for x in j])
+            sums +=score*(i+1)
+        return sums
 def Euler_22():
     name = sorted(names.names)
     ret = 0
@@ -12,4 +23,5 @@ def Euler_22():
     return ret
 
 if __name__=='__main__':
-    print(Euler_22())
+    print(e022())
+    #print(Euler_22())
