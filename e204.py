@@ -1,23 +1,22 @@
-from functools import reduce
-from operator import mul
-from sieve import sieve
-from maths import fact
-from itertools import combinations_with_replacement as comb
-from itertools import product
-def e204():
-    aset = set()
-    primes = sieve(100)
-    t = 0
-    top = fact(len(primes)+30-1)/fact(30)/fact(len(primes)-1)
+from maths import isprime2
+from allsieve import sieveOfEratosthenes as sieve
+def e204(top=10**8,n=5):
+    cou = 0
+    while isprime2(n):n+=1
+    primes = sieve(int(top**.5))
+    for i,x in enumerate(primes):
+        if x > n:prime=primes[i:];break
     mini = 10000
-    for j in range(1,31):
-        for i in comb(primes,j):
-            print(i)
-            if t>mini:print(t/top,end='\r');mini+=10000
-            aset.add(reduce(mul,i))
-            t+=1
+    for i in range(1,top):
+        if i>mini:print(i/top,end='\r');mini+=10000
+        b = True
+        if isprime2(i):continue
+        for j in primes:
+            if j>i**.5:break
+            if i%j==0:b = False;break
+        if b:cou+=1
     print()
-    alist = [i for i in aset if i <= 10**8]
-    return len(alist)+1
+    return cou
+
 if __name__=='__main__':
     print(e204())
