@@ -1,0 +1,72 @@
+#pre-calculate factorials
+fact=[1]
+for i in range(1,139):
+  fact.append(fact[-1]*i)
+ 
+def c(n,k):
+  return fact[n]/fact[k]/fact[n-k]
+ 
+#Calculate D(0)-D(138) in order to back-calculate x
+d=[0]
+for n in range(1,139):
+  r=0
+  for i in range(n):
+    r+=(d[i]-fact[i])*c(n,i)
+  d.append(r)
+ 
+x=[]
+for n in range(138):
+  x.append(n*d[n-1]-d[n])
+ 
+#Calculate x modulo each prime for its full period
+x7=[]
+x11=[]
+x73=[]
+x101=[]
+x137=[]
+for i in range(6):
+  x7.append(x[i]%7)
+for i in range(10):
+  x11.append(x[i]%11)
+for i in range(72):
+  x73.append(x[i]%73)
+for i in range(100):
+  x101.append(x[i]%101)
+for i in range(136):
+  x137.append(x[i]%137)
+ 
+#Use Chinese remainder theorem-type calculation to solve for x mod 77777777 (xx)
+#for all values in its period of 30600. For each n in this range:
+# xx[n] mod 7 = x7[n mod 6]
+# xx[n] mod 11 = x11[n mod 10]
+# xx[n] mod 73 = x73[n mod 72]
+# xx[n] mod 101 = x101[n mod 100]
+# xx[n] mod 137 = x137[n mod 136]
+xx=[]
+for n in xrange(30600):
+  #find xx mod 137
+  xx1=x137[n%136]
+  #find xx mod 137*101
+  xx2=xx1
+  while xx2%101!=x101[n%100]:
+    xx2+=137
+  #find xx mod 137*101*73
+  xx3=xx2
+  while xx3%73!=x73[n%72]:
+    xx3+=137*101
+  #find xx mod 137*101*73*11
+  xx4=xx3
+  while xx4%11!=x11[n%10]:
+    xx4+=137*101*73
+  #find xx mod 137*101*73*11*7
+  xx5=xx4
+  while xx5%7!=x7[n%6]:
+    xx5+=137*101*73*11
+  xx.append(xx5)
+ 
+n=int(10**9/77777777)*77777777
+dn=-xx[n%30600]
+while n<10**9:
+  n+=1
+  dn=(n*dn-xx[n%30600])%77777777
+print dn

@@ -1,6 +1,6 @@
 from fractions import Fraction as frac
 from memorize import memo
-from helpers import totient4 as phi
+from helpers import totient as phi
 from maths import primetree,primesd3,isprime2,nextprime
 from time import time
 from math import ceil

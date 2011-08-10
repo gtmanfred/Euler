@@ -82,7 +82,7 @@ def generate_convergents(a0, iterator):
         d1, d0 = d0, x * d0 + d1
 
 
-def binomial_coefficient(n, k):
+def bicoeff(n, k):
     return factorial(n) // factorial(k) // factorial(n - k)
 
 

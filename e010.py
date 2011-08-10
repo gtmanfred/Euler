@@ -1,5 +1,6 @@
 import maths 
-from allsieve import sieveOfEratosthenes as sieve
+from allsieve import primesfrom2to as p,sieveOfEratosthenes as sieve
+
 def e010(top=2*10**6):
     return sum(sieve(top))
 

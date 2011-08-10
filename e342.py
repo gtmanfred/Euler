@@ -1,19 +1,16 @@
-from helpers import totient4 as t
-def memo(f):
-    cache={}
-    def helper(x):
-        if cache.get(x):pass
-        else:cache[x]=f(x)
-        return cache.get(x)
-    return helper
-@memo
-def e342(top=10000):
-    result = 0
-    for n in range(2,top):
-        if n%10000==0:print(n,end='\r')
-        x = t(n**2)
-        if round(x**(1/3))**3==x:result+=n
-    print()
-    return result
+from helpers import *
+def e342(n):
+    count = 0
+    mini = 1000
+    for i in range(2,n):
+        if i>mini:print(i/n);mini+=1000
+        if test(i):
+            count+=i
+    return count
+def test(i):
+    phi = totient(i**2)
+    tmp = primetree(phi)
+    return all([tmp[i][1]==3 for i in range(len(tmp))])
+
 if __name__=='__main__':
     print(e342(10**10))

@@ -1,8 +1,8 @@
-def memorize(f):
+def memo1of2(f):
     cache = {}
-    def helper(x):
+    def helper(x,y):
         if x not in cache:
-            cache[x] = f(x)
+            cache[x] = f(x,y)
         return cache[x]
     return helper
 def memo(f):
@@ -12,7 +12,7 @@ def memo(f):
             cache[x] = f(x)
         return cache[x]
     return helper
-def memorize3(f):
+def memo3(f):
     cache = {}
     def helper(x,y,z):
         p = str(x)+' '+str(y)+' '+str(z)
@@ -20,7 +20,7 @@ def memorize3(f):
             cache[p] = f(x,y,z)
         return cache[p]
     return helper
-def memorize2(f):
+def memo2of2(f):
     cache = {}
     def helper(x,y):
         p = str(x)+' '+str(y)

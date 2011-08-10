@@ -2,7 +2,29 @@ from random import randint
 from fractions import gcd
 from math import ceil
 import math, time
-def isprime(number):
+def isprime(n):
+    if n in (1,0):
+        return False
+    elif n<4:
+        return True
+    elif not n&1:
+        return False
+    elif n<9:
+        return True
+    elif not n%3:
+        return False
+    else:
+        r=int(math.sqrt(n))
+        f = 5
+        while f<=r:
+            if not n%f:
+                return False
+            if not n%(f+2):
+                return False
+            f = f+6
+        return True
+
+def isprime2(number):
     start=time.clock()
     fnum = [1,]
     last = int(math.ceil(math.sqrt(number)))

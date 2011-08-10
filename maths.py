@@ -1,22 +1,36 @@
 from primes import Primes
 from sieve import sieve
+from allsieve import sieveOfEratosthenes as soe
 import math
 import itertools
 from itertools import *
 from primes import Primes
 from time import *
 from memorize import *
+from operator import mul
+from functools import reduce
 prime_list = [2, 3, 5, 7, 11, 13, 17, 19, 23]   # Ensure that this is initialised with at least 1 prime
 prime_dict = dict.fromkeys(prime_list, 1)
 lastn      = prime_list[-1]
+def lcm(n1,n2):
+    return (n1*n2)//gcd(n1,n2)
+def mullcm(alist):
+    tmp = alist[0]
+    for i in range(1,len(alist)):
+        tmp = lcm(tmp,alist[i])
+    return tmp
+
+def ncrrec(n,r):
+    xn = factrec(n)
+    xr = factrec(r)
+    nr = factrec(n-r)
+    ret = xn/(xr*nr)
+    return ret
 
 def ncr(n,r):
     xn = fact(n)
-    print('xn')
     xr = fact(r)
-    print('r')
     nr = fact(n-r)
-    print('nr')
     ret = xn/(xr*nr)
     return ret
 
@@ -44,6 +58,12 @@ def gcd(a,b):
     if b ==0:return a
     else:return gcd(b,a%b)
 
+def mulgcd(alist):
+    tmp = alist[0]
+    for i in range(1,len(alist)):
+        tmp = gcd(tmp,alist[i])
+    return tmp
+
 def hcf(no1,no2):
     while no1!=no2:
         if no1>no2:no1-=no2
@@ -62,8 +82,13 @@ def ispan(n,ds=9):
     if sorted(digs)==check:return True
     else:return False
 
-
+@memo
+def factrec(num):
+    if num in (0,1):return 1
+    else:return num*factrec(num-1)
 def fact(num):
+    return reduce(mul,range(1,num+1))
+def fact1(num):
     f = num
     if num == 0:
         return 1
@@ -185,18 +210,24 @@ def primetree(num):
             if num==1:
                 break
         return powers
-
 def isprime3(num, primes = [2,3,5,7,11,13,17,19]):
-    if num in primes:return True
+    if len(primes)==0:primes = [2,3,5,7,11,13,17,19]
+    if num<=primes[-1]:
+        if num in primes:return True
+        else:return False
     for i in primes:
         if num%i==0:return False
-    
+    if num**.5<primes[-1]:return True
+    else:
+        p = soe(int(num**.5)-1)
+        if p[-1]==primes[-1]:return True
+        return isprime3(num,p)
 
 def isprime2(num):
         if type(num) == str:num = int(num)
         if num == 2: return True
         if num < 2 or num % 2 == 0: return False
-        return not any(num % i == 0 for i in range(3,int(math.sqrt(num))+1, 2))
+        return not any(num % i == 0 for i in range(3,int(math.sqrt(num)), 2))
         
 def isprime1(n):
     i =2 
@@ -364,7 +395,6 @@ letters={'A':'1','B':'2','C':'3','D':'4','E':'5','F':'6','G':'7','H':'8',\
         'I':'9','J':'10','K':'11','L':'12','M':'13','N':'14','O':'15',\
         'P':'16','Q':'17','R':'18','S':'19','T':'20','U':'21','V':'22',\
         'W':'23','X':'24','Y':'25','Z':'26'}
-@memorize
 def findallfactors(num, maxDiv=None):
 	factors = []
  

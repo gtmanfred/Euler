@@ -1,10 +1,21 @@
-from maths import isprime,primesd3
+from maths import isprime2,primesd3,nextprime
 from allsieve import primesfrom2to as sieve
+from isprime import isprime
+
 def e007(n=10001):
+    x = 3
+    i=2
+    while i<n:
+        if isprime(x):
+            i+=1
+        x+=2
+    return x-2
+    '''
     s = 10
     tmp = sieve(s)
     while len(tmp)<n:s*=10;tmp = sieve(s)
     return tmp[n-1]
+    '''
 
 def Euler_7(n = 10001):
     p = primesd3(10**6)
