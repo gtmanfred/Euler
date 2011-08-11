@@ -2,12 +2,12 @@ from collections import defaultdict
 from itertools import count
 from operator import mul
 from functools import reduce
-from memorize import memo,memo1of2
-from allsieve import soe as sieve#sieveOfEratosthenes as sieve
-#from maths import isprime2
-from primes import isPrime as isprime2
+from script.memorize import memo,memo1of2
+from script.allsieve import soe as sieve#sieveOfEratosthenes as sieve
+#from script.maths import isprime2
+from script.primes import isPrime as isprime2
 from math import floor
-from extra import elist
+from script.extra import elist
 def genindex(alist,f):
     gen = (i for i,x in enumerate(alist) if x == f)
     for i in gen:yield i

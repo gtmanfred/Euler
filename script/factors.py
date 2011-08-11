@@ -1,6 +1,6 @@
-from sieve import sieve
-from maths import isprime2
-from memorize import memorize2
+from script.sieve import sieve
+from script.maths import isprime2
+from script.memorize import memorize2
 @memorize2
 def factors(x,i=0):
     if isprime2(x):return [x]

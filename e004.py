@@ -1,7 +1,7 @@
-from maths import ispal
+from script.maths import ispal
 def e004(d=3):
     pals = []
-    #tmp = list(range(999,100,-1))
+    tmp = list(range(999,100,-1))
     for i,x in enumerate(tmp):
         for y in tmp[i:]:
             if ispal(x*y):pals+=[x*y]

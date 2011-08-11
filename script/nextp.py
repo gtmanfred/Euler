@@ -1,5 +1,5 @@
-from memorize import *
-from maths import isprime2
+from script.memorize import *
+from script.maths import isprime2
 ps = [2,3,5,7,11,13,17,19]
 top = 0
 @memo

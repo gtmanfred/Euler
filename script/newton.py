@@ -1,5 +1,11 @@
 from time import time
 from math import *
+def new2(fn,fp,args,x=.1):
+    while fn(x,args)!=0 or rerr>10**-12:
+        x,lastx = x-(fn(x,args)/fp(x,args)),x
+        if x==0:return x
+        rerr = abs(lastx-x)/x
+    return x
 def newton(fn=0,fp=0,x=.1,mn = 0):
     t = time()
     test = 0

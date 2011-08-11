@@ -1,5 +1,5 @@
 from math import *
-from maths import isprime2 as isPrime
+from script.maths import isprime2 as isPrime
 from time import *
 def hform(prime_list, exp_list, lim, bound, count, hcount):
     for element in range(exp_list[count-1]+1):

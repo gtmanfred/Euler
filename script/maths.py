@@ -1,12 +1,12 @@
-from primes import Primes
-from sieve import sieve
-from allsieve import sieveOfEratosthenes as soe
+from script.primes import Primes
+from script.sieve import sieve
+from script.allsieve import sieveOfEratosthenes as soe
 import math
 import itertools
 from itertools import *
-from primes import Primes
+from script.primes import Primes
 from time import *
-from memorize import *
+from script.memorize import *
 from operator import mul
 from functools import reduce
 prime_list = [2, 3, 5, 7, 11, 13, 17, 19, 23]   # Ensure that this is initialised with at least 1 prime
@@ -75,12 +75,11 @@ def pandigs(i = '123456789',d = 9):
     ret = set("".join(x) for x in itertools.permutations(i,d))
     return ret
 
-def ispan(n,ds=9):
-    digs = list(str(n))
-    if len(digs)<ds:return False
-    check = list(str(x) for x in range(1,ds+1))
-    if sorted(digs)==check:return True
-    else:return False
+def ispan(n):
+    if type(n)==type(1):
+        n = str(n)
+    assert len(n)==10,'not enough digits'
+    return all(str(i) in n for i in range(10))
 
 @memo
 def factrec(num):

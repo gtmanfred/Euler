@@ -1,13 +1,13 @@
-from primes import isPrime as ip
-#from maths import isprime2
-from isprime import isprime
+from script.primes import isPrime as ip
+#from script.maths import isprime2
+from script.isprime import isprime
 from time import time
-from maths import nextprime
-x = 12
+from script.maths import nextprime
+from script.prime import is_prime
+x = 1000
 t = time()
 for i in range(1,x):
-    print(i,end='\r')
-    a = ip(nextprime(10**i))
+    a = ip(i)
 print(time()-t)
 '''
 t = time()
@@ -17,6 +17,8 @@ print(time()-t)
 '''
 t = time()
 for i in range(1,x):
-    print(i,end='\r')
-    a = isprime(nextprime(10**i))
+    a = isprime(i)
+print(time()-t)
+for i in range(1,x):
+    a = is_prime(i)
 print(time()-t)

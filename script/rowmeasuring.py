@@ -1,4 +1,4 @@
-from math2 import binomial_coefficient, count_permutations
+from script.math2 import binomial_coefficient, count_permutations
 
 
 def combinations_with_limit(a, b, limit):
