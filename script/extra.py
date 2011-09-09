@@ -76,14 +76,19 @@ class elist(list):
             if la!=lb:assert('inputs must be of the same length.')
             return self.linmul(self,other)
     def linmul(self,a,b):
-        return [a[i]*b[i] for i in range(len(a))]
+        ret =  [a[i]*b[i] for i in range(len(a))]
+        return ret
     def matmul(self,a,b,i=0):
         from functools import reduce
         if i:b,a=a,b
-        r,c = len(a[0]),len(b)
-        ret = [[0]*r]*c
-        ret = [[1,2],[3,4]]
+        r,c = len(a),len(b[0])
+        ret = []
         for line,ra in enumerate(a):
+            n = []
             for cb in range(c):
-                ret[line][cb]=sum(self.linmul([i[cb] for i in b],ra))
+                if n:
+                    n +=[sum(self.linmul([i[cb] for i in b],ra))]
+                else:
+                    n = [sum(self.linmul([i[cb] for i in b],ra))]
+            ret+=[n]
         return ret

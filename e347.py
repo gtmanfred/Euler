@@ -5,10 +5,10 @@ from operator import mul
 from functools import reduce
 from script.memo import memo
 def M(p,q,N):
-    exp = ceil(log(N)/log(max([p,q])))*2
+    exp = ceil((log(N)-log(max([p,q])))/log(min([p,q])))
     tmp = [0]
-    for e in range(exp,0,-1):
-        combos = list(cwr([p,q],e))[-1::-1]
+    for e in range(1,exp+1):
+        combos = cwr([p,q],e)
         nums = []
         for i in combos:
             if p in i and q in i:
@@ -23,7 +23,7 @@ def M(p,q,N):
     return max(tmp)
 
 def S(N):
-    primes = soe(N//2+1)#[-1::-1]
+    primes = soe(N//2+10)#[-1::-1]
     s = 0
     tmp = 0
     tmp2 = 0
@@ -31,10 +31,7 @@ def S(N):
     mini = 0
     count = False
     for p,q in combinations(primes,2):
-        if p>2:
-            print()
-            return s
-        if p>3162:break
+        #if p>3162:break
         if p==tmpp:continue
         if p*q>N:
             if count and p!=tmpp:
