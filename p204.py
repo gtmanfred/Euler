@@ -22,10 +22,10 @@
 #
 # Notes:
 
-from isprime import isprime as isPrime
+from script.isprime import isprime as isPrime
 from math import *
 from time import *
-from allsieve import sieveOfEratosthenes as sieve
+from script.allsieve import soe as sieve
 
 def hform(prime_list, exp_list, lim, bound, count, hcount):
     for element in range(exp_list[count-1]+1):

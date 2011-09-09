@@ -1,4 +1,4 @@
-import maths
+from script import maths
 import itertools
 
 def Euler_41():

@@ -3,6 +3,8 @@ from fractions import gcd
 from math import ceil
 import math, time
 def isprime(n):
+    if type(n)==str:
+        n = int(n)
     if n in (1,0):
         return False
     elif n<4:

@@ -1,5 +1,5 @@
-import maths
-import words
+from script import maths
+from script import words
 
 tnums = list((i*(i+1))//2 for i in range(1,1001))
 len(tnums)

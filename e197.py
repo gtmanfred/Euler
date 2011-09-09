@@ -1,5 +1,5 @@
 from math import floor
-from memorize import memo
+from script.memorize import memo
 test = lambda x: int(2**(30.403243784-x**2))*10**(-9)
 def e197(top = 10**12):
     i = 0

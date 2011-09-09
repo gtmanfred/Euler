@@ -1,7 +1,7 @@
 from time import time
-from sieve import *
-from maths import isprime
-from tools import miller_rabin as isprime1
+from script.sieve import *
+from script.maths import isprime
+from script.tools import miller_rabin as isprime1
 def e216(top=50000000):
     t = lambda n:2*n**2-1
     to = round(t(top)**.5)

@@ -1,4 +1,4 @@
-from maths import findallfactors
+from script.maths import findallfactors
 def getMin(k):
     n = k+2
     while True:

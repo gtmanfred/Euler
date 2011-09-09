@@ -1,4 +1,4 @@
-from maths import *
+from script.maths import *
 def e203(top = 51):
     pasc = pascal()
     n = pasc[-1][len(pasc)//2-1]

@@ -1,8 +1,9 @@
-from maths import primesd
+from script.maths import primesd
+from script.allsieve import soe
 from math import sqrt
-primed = primesd(10**6)
-nprime = [x for x in primed.keys() if primed.get(x) is 0 and x%2]
-primes = [x for x in primed.keys() if primed.get(x) is 1]
+primes = soe(10**6)
+pd = dict.fromkeys(primes,1)
+nprime = [x for x in range(1,10**6,2) if not pd.get(x)] 
 def Euler_46():
     b = True
     t = False

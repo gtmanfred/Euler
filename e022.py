@@ -1,9 +1,10 @@
-import maths
-import names
-from maths import letters
-def e022(t = 'e022.txt'):
+from script import maths
+from script import names
+from script.maths import letters
+def e022(t = 'script/names.txt'):
     with open(t) as file:
-        f = file.read().split('","')
+        f = file.read().split('\n')[1]
+        f = f.split('","')
         f[0],f[-1]=f[0][1:],f[-1][:-1]
         f = sorted(f)
         sums = 0

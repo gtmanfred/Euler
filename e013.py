@@ -1,4 +1,4 @@
-def e013(t = 'e013.txt'):
+def e013(t = 'script/e013.txt'):
     with open(t) as file:
         f = file.read().split('\n')
         return str(sum([int(i) for i in f]))[:10]

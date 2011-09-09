@@ -1,5 +1,7 @@
-def e083(m = 'matrix.txt'):
-    M = [[int(y) for y in x.strip().split(',')] for x in open(m).readlines()]
+def e083(m = 'script/matrix.txt'):
+    with open(m) as f:
+        M = [[int(y) for y in x.strip().split(',')] for x in\
+                f.read().split('\n')[1:-1]]
     N = [[1000000 for x in range(len(M))] for y in range(len(M))]
     N[0][0] = M[0][0]
     change, iters = True, 0

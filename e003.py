@@ -1,5 +1,5 @@
-from maths import isprime2
-from sieve import sieve
+from script.maths import isprime2
+from script.sieve import sieve
 def e003(num=600851475143):
     p = sieve(round(num**.5))
     for i in p[::-1]:

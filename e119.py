@@ -1,4 +1,4 @@
-from maths import sumdigs
+from script.maths import sumdigs
 def e119(top =30):
     alist = []
     b = 2

@@ -1,4 +1,4 @@
-from maths import gcd
+from script.maths import gcd
 def e276(top = 10**7):
     count = 0
     for i in range(1,top):

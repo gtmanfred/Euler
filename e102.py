@@ -1,6 +1,7 @@
 #!/usr/bin/python
 def Euler_102():
-    alist = list(x for x in open('triangles.txt').read().split('\n'))
+    with open('script/triangles.txt') as f:
+        alist = list(x for x in f.read().split('\n')[1:-1])
     for i in alist:
         ilist = [int(x) for x in i.split(',')]
         a = ilist[:2]

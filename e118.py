@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # Solution to http://projecteuler.net/?section=problems&id=118
 from itertools import permutations
-from isprime import isprime as is_prime
+from script.isprime import isprime as is_prime
 
 def generate_digit_partitions(n):
     groups = [0] * n

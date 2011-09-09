@@ -1,4 +1,4 @@
-from maths import ispan
+from script.maths import ispan
 def Euler_38():
     n = 9
     i = 1

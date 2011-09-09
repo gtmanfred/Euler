@@ -9,6 +9,7 @@ def count(x,y):
 def Euler_85(top=2000000):
     mindiff =top 
     for i in range(1,100):
+        print(i)
         for j in range(1,i):
             diff = abs(top-count(i,j))
             if diff<mindiff:mindiff=diff;reti = i;retj=j;ret = i*j#

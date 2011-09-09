@@ -1,4 +1,3 @@
-  
 def Euler_18():
     triangle =[ 
         [75],

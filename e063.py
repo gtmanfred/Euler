@@ -4,9 +4,8 @@ def Euler_63():
     maxi = 10
     for i in range(1,maxi):
         logi = log10(i)
-        s+=int(1/(1-logi))
-    return s
+        s+=1//(1-logi)
+    return int(s)
 
 if __name__=='__main__':
     print(Euler_63())
-    print(__name__)

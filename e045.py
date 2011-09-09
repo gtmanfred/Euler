@@ -9,7 +9,7 @@ formulae:
 
     Find the next triangle number that is also pentagonal and hexagonal.
 '''
-import maths
+from script import maths
 n = 100000
 n2 = 100001
 alist = list(x for x in range(n2))

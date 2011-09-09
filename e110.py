@@ -1,5 +1,5 @@
 from functools import *
-from maths import *
+from script.maths import *
  
 primes = primes(50)
  

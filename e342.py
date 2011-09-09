@@ -1,4 +1,4 @@
-from helpers import *
+from script.helpers import *
 def e342(n):
     count = 0
     mini = 1000

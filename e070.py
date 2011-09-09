@@ -1,4 +1,4 @@
-from maths import primesd2
+from script.maths import primesd2
 def Euler_70():
     maxrat = 10
     prim1 = primesd2(10**7)

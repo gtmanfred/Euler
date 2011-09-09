@@ -1,4 +1,4 @@
-from math2 import binomial_coefficient, count_permutations
+from script.math2 import bicoeff, count_permutations
 def e114(m=3,n=50):
     return f(m,n)
 
@@ -37,7 +37,7 @@ def f(m, n):
         lim = n - b + 1
         for c in combinations_with_limit(b, m, lim):
             p = n - sum(c) + 1
-            num_ways += binomial_coefficient(p, b) * count_permutations(c)
+            num_ways += bicoeff(p, b) * count_permutations(c)
     return num_ways
 if __name__=='__main__':
     print(e114())

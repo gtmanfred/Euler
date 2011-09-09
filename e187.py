@@ -1,6 +1,6 @@
 from time import time
 from scipy import cross
-from maths import primesd3,fact
+from script.maths import primesd3,fact
 ti = time()
 def e187(top = 10**8//2):
     print(time()-ti)

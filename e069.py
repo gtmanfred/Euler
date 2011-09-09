@@ -1,4 +1,4 @@
-from maths import primes
+from script.maths import primes
 primes = primes(200)
 print(primes)
 def Euler_69():

@@ -1,4 +1,3 @@
-from memorize import *
 def digs(num):
     res = 0 
     while num > 9:
@@ -14,6 +13,7 @@ def Euler_92():
             num = digs(num)
         if num==89:nums[i]=1
     count = 0
+    print('start')
     for j in range(1,10000000):
         k = digs(j)
         if nums.get(k):count+=1

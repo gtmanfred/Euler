@@ -1,5 +1,6 @@
 import re
-alist = list(x for x in open('e089.txt').read().split('\n'))
+with open('script/roman.txt') as f:
+    alist = list(x for x in f.read().split('\n')[1:])
 pattern = '^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$'
 roman = {'M':  1000,
          'CM':900,

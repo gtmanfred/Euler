@@ -1,6 +1,6 @@
 from time import *
 t = time()
-from maths import gcd
+from script.maths import gcd
 from math import *
 def e75(top=1500000):
     count = 0

@@ -1,4 +1,4 @@
-from math2 import binomial_coefficient, multinomial_coefficient
+from script.math2 import bicoeff, multinomial_coefficient
 def e117():
     units = 50
     num_ways = 0
@@ -7,7 +7,7 @@ def e117():
             for b in range((units - 2 * r - 3 * g) // 4 + 1):
                 p = units - 2 * r - 3 * g - 4 * b + r + g + b
                 blocks = r + g + b
-                c1 = binomial_coefficient(p, blocks)
+                c1 = bicoeff(p, blocks)
                 c2 = multinomial_coefficient(blocks, (r, g, b))
                 num_ways += c1 * c2
     return num_ways

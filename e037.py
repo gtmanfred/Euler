@@ -1,5 +1,7 @@
-import maths
-primes = maths.primesd(10**6)
+#from script import maths
+#primes = maths.primesd(10**6)
+from script.allsieve import soe
+primes = dict.fromkeys(soe(10**6),1)
 
 def Euler_37():
     ret = 0

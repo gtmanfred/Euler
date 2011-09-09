@@ -1,5 +1,5 @@
 from time import time
-from maths import all_factors,primesd
+from script.maths import all_factors,primesd
 t = time()
 def e095(top=10**6):
     div = [0 for i in range(top)]

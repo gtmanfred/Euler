@@ -1,4 +1,4 @@
-import maths
+from script import maths
 Max = 28123
 abund = [x for x in range(10,Max) if sum(maths.all_factors(x))>x+x]
 abundict=dict.fromkeys(abund,1)

@@ -1,6 +1,6 @@
 from script.primes import Primes
-from script.sieve import sieve
-from script.allsieve import sieveOfEratosthenes as soe
+#from script.sieve import sieve
+from script.allsieve import soe
 import math
 import itertools
 from itertools import *
@@ -78,15 +78,16 @@ def pandigs(i = '123456789',d = 9):
 def ispan(n):
     if type(n)==type(1):
         n = str(n)
-    assert len(n)==10,'not enough digits'
-    return all(str(i) in n for i in range(10))
+    #assert len(n)==10,'not enough digits'
+    return all(str(i) in n for i in range(1,len(n)+1))
 
 @memo
 def factrec(num):
     if num in (0,1):return 1
     else:return num*factrec(num-1)
 def fact(num):
-    return reduce(mul,range(1,num+1))
+    if num==0:return 1
+    return reduce(mul,list(range(1,num+1)))
 def fact1(num):
     f = num
     if num == 0:
@@ -270,9 +271,14 @@ def tree(num):
     return ret
 
 
+def ispal(n):
+    ns = str(n)
+    mid = len(ns)//2
+    if ns[:mid]==ns[-mid:][-1::-1]:return True
+    else:return False
 
 
-def ispal(num):
+def ispal2(num):
     num = str(num)
     while len(num)>1:
         if num[0] is not num[len(num)-1]:

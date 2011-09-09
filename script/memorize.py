@@ -28,3 +28,12 @@ def memo2of2(f):
             cache[p] = f(x,y)
         return cache[p]
     return helper
+def memo4(f):
+    cache = {}
+    def helper(x,y,z,l):
+        [x,y,z] = sorted([x,y,z])[-1::-1]
+        p = str(x)+str(y)+str(z)+str(l)
+        if p not in cache:
+            cache[p] = f(x,y,z,l)
+        return cache[p]
+    return helper

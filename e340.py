@@ -1,4 +1,4 @@
-from memorize import memo
+from script.memorize import memo
 a,b,c=21**7,7**21,12**7
 def e340():
     quot,remain=divmod(b,a)

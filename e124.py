@@ -1,4 +1,4 @@
-from maths import findallfactors
+from script.maths import findallfactors
 def Euler_124(top = 100000):
     alist = []
     for n in range(1,top+1):

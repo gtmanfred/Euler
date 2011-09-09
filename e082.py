@@ -1,8 +1,9 @@
 # The matrix to check
-alist = list(x for x in open('matrix.txt').read().split('\n'))
+with open('script/matrix.txt') as f:
+    alist = list(x for x in f.read().split('\n'))
 blist = list(alist[alist.index(y)].split(',') for y in alist)
 clist = []
-for z in blist[:-1]:
+for z in blist[1:-1]:
     clist.append(list(int(x) for x in z))
 print(len(clist))
 matrix = clist

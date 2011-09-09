@@ -82,6 +82,13 @@ def fs(n,pfs=[]):
             pfs+=[i]
             if n==1:return [i]
             return [i]+fs(n,pfs)
+def divs(n):
+    d = [1]
+    for p,e in primetree(n):
+        l = len(d)
+        d.extend(x*p for i in range(e) for x in d[-l:])
+    d.sort()
+    return d
 def primetree(n):
     tree = fsandexp(n,[])
     p = list(set(tree))

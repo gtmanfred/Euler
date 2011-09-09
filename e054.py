@@ -1,4 +1,5 @@
-alist = list(x for x in open('poker.txt').read().split('\n'))
+with open('script/poker.txt') as f:
+    alist = list(x for x in f.read().split('\n'))[1:]
 blist = []
 count = 0
 def Euler_54():

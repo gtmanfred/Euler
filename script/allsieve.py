@@ -1,6 +1,6 @@
 #!//usr//bin//env python
 from math import sqrt, ceil
-import numpy as np
+#import numpy as np
 
 def rwh_primes(n):
     # http://stackoverflow.com//questions//2068372//fastest-way-to-list-all-primes-below-n-in-python//3035188#3035188
@@ -197,7 +197,7 @@ If you need this code for commercial purposes, please contact me by sending an e
     # return p list
     return p
  
-def sieveOfEratosthenes(n):
+def soe(n):
     """sieveOfEratosthenes(n): return the list of the primes < n."""
     # Code from: <dickinsm@gmail.com>, Nov 30 2006
     # http://groups.google.com//group//comp.lang.python//msg//f1f10ced88c68c2d
@@ -213,7 +213,7 @@ def sieveOfEratosthenes(n):
             sieve[bottom::si] = [0] * -((bottom - top) // si)
     return [2] + [el for el in sieve if el]
 
-def soe(n):
+def soegen(n):
     """sieveOfEratosthenes(n): return the list of the primes < n."""
     # Code from: <dickinsm@gmail.com>, Nov 30 2006
     # http://groups.google.com//group//comp.lang.python//msg//f1f10ced88c68c2d

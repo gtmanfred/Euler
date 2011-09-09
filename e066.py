@@ -1,4 +1,4 @@
-from maths import *
+from script.maths import *
 def Euler_66(top = 1000):
     p = primes(top)
     ret = [0 for i in range(top+1)]

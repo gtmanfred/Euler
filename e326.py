@@ -1,4 +1,4 @@
-from memorize import memo
+from script.memorize import memo
 @memo
 def a(n):
    if n==1: return 0,1
@@ -22,7 +22,7 @@ def hist326(T,P,M):
       H[S]+=n
       e=e326(x+1)
       S=(S+e)%M
-   return sum(h*(h-1)/2) for h in H)
+   return sum([h*(h-1)/2 for h in H])
 
 @memo
 def a2(n):

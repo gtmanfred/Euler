@@ -22,8 +22,11 @@ Euler published the remarkable quadratic formula:
     that produces the maximum number of primes for consecutive values of n,
     starting with n = 0.
 '''
-import maths
-primes = maths.primesd(100000)
+#primes = maths.primesd(100000)
+from script.allsieve import soe
+#from script.isprime import isprime
+from script.maths import isprime2 as isprime
+primes = dict.fromkeys(soe(10**5),1)
 def Euler_27(numa=1000,numb=1000):
     big = 0
     for a in range(-numa,numa):
@@ -31,9 +34,9 @@ def Euler_27(numa=1000,numb=1000):
         for b in range(-numb,numb):
             n = 0
             val = n**2+n*a+b
-            if maths.isprime2(val):
+            if isprime(val):
                 num = 0
-                while maths.isprime2(val):
+                while isprime(val):
                     num+=1
                     n+=1
                     val = n**2+n*a+b

@@ -1,4 +1,4 @@
-from maths import *
+from script.maths import *
 
 
 def Euler_12(num=500):

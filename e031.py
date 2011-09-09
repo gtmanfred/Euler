@@ -1,3 +1,4 @@
+from itertools import product
 def Euler_31():
     i = 0
     for a in range(0,400,200):

@@ -1,4 +1,4 @@
-from memorize import memo
+from script.memorize import memo
 def e014(num=10**6):
     maxlen = 1
     for i in range(1,num+1):

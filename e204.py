@@ -1,22 +1,55 @@
-from maths import isprime2
-from allsieve import sieveOfEratosthenes as sieve
-def e204(top=10**8,n=5):
-    cou = 0
-    while isprime2(n):n+=1
-    primes = sieve(int(top**.5))
-    for i,x in enumerate(primes):
-        if x > n:prime=primes[i:];break
-    mini = 10000
-    for i in range(1,top):
-        if i>mini:print(i/top,end='\r');mini+=10000
-        b = True
-        if isprime2(i):continue
-        for j in primes:
-            if j>i**.5:break
-            if i%j==0:b = False;break
-        if b:cou+=1
-    print()
-    return cou
-
+from itertools import combinations_with_replacement as cwr
+from script.allsieve import soe
+from math import log
+from functools import reduce
+from operator import mul
+def e204(top,n):
+    print(cham(top,n))
+def cham(num,n):
+    aset = set([1])
+    exp = int(log(num)/log(2))
+    primes = soe(n+1)
+    count = 2
+    combos = [cwr(primes,i) for i in range(1,exp)]
+    for i in range(1,exp):
+        print(i*1.0/exp)
+        for combo in cwr(primes,i):
+            tmp = reduce(mul,combo)
+            if tmp<=num:
+                count+=1
+                #aset.add(tmp)
+            else:
+                tests = list(combo)[0]**len(combo)
+                if tests>num:
+                    print(combo,len(combo))
+                    break
+    print(count)
+    #return len(aset)+1
+'''
+def test204(top,n):
+    return len(ham(top,n))
+def countham(top,n):
+    count = 0
+    for i in range(1,top+1):
+        if ham(i,n):
+            count+=1
+    return count
+def ham(num,n):
+    if num==1:
+        return True
+    if isprime(num):
+        if num<=n:
+            return True
+        else:
+            return False
+    if max([i[0] for i in primetree(num)])<=n:
+        return True
+    return False
+'''
 if __name__=='__main__':
-    print(e204())
+    import sys
+    a = sys.argv
+    if len(a)==3:
+        print(cham(int(a[1]),int(a[2])))
+    else:
+        print(cham(1000,5))

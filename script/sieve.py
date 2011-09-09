@@ -18,8 +18,6 @@ def sieve(end):
 
     # Only go up to square root of the end  
     for i in range(int(sqrt(end)) >> 1):  
-        if i<100:print(i,end='\r')
-        if i>mini:print(i/end**.5*2,end='\r');mini+=50
         #sieve out non primes
         if not sieve[i]: continue  
 
@@ -40,8 +38,6 @@ def extendsieve(A, B, pA = []):
     s = [ True ]* (B-A)
     mini = 1000
     for p in pA:
-        if p<1000:print(p,end='\r')
-        if p>mini:print(p/pA[-1],end='\r');mini+=1000
         # first multiple of p greater than A
         m0 = ((A+p-1)//p)*p
         for m in range( m0, B, p):

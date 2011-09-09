@@ -1,5 +1,5 @@
-from numbertheory import phi
-from allsieve import soe as sieve
+from script.numbertheory import phi
+from script.allsieve import soegen as sieve
 def test(c=25,n = 4*10**7):
     plist = phi(n)
     print('pdone')

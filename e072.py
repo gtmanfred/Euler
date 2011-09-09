@@ -1,4 +1,3 @@
-
 from fractions import Fraction
 def Euler_72(L = 10**6):
     phi = list(range(L+1))

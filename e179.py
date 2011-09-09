@@ -1,4 +1,4 @@
-from maths import primedivs
+from script.maths import primedivs
 from time import *
 t = time()
 def Euler_179(top = 10**7):

@@ -1,4 +1,6 @@
-f = open('words.txt').read().split(',')
+with open('script/words.txt') as fil:
+    fil = fil.read().split('\n')[1]
+    f = fil.split(',')
 fset = [set(i) for i in f]
 fdict = {f[i]:[fset[i],{j:f[i].count(j) for j in fset[i]}] for i in range(len(f))}
 numlist = [i for i in range(1,int(987654322**.5))]

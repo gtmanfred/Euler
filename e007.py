@@ -1,6 +1,7 @@
-from maths import isprime2,primesd3,nextprime
-from allsieve import primesfrom2to as sieve
-from isprime import isprime
+from time import time
+from script.maths import isprime2,primesd3,nextprime
+from script.allsieve import primesfrom2to as sieve
+from script.isprime import isprime
 
 def e007(n=10001):
     x = 3
@@ -40,5 +41,5 @@ def isprime(n):
         return True
 
 if __name__=='__main__':
-    print(e007())
-#    print(Euler_7())
+    #print(e007())
+    print(Euler_7())

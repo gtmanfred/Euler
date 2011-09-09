@@ -1,4 +1,6 @@
-import maths
+from script.maths import factrec
+from functools import reduce
+#from operator import 
 
 def Euler_34():
     ret = 0
@@ -10,8 +12,7 @@ def Euler_34():
 
 
 def sumdigfacts(num):
-    num = str(num)
-    return sum(list(maths.fact(int(x)) for x in num))
+    return sum([factrec(int(i)) for i in str(num)])
 
 if __name__=='__main__':
     print(Euler_34())

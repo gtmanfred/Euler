@@ -1,7 +1,7 @@
-from divisors import *
-from maths import nextprime
+from script.divisors import *
+from script.maths import nextprime
 from time import time
-from facts import numfacts
+from script.facts import numfacts
 def e108(sols = 10**3,p = True):
     t = time()
     n = 2

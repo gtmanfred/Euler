@@ -1,5 +1,10 @@
-from cipher1 import cipher
+#from script.cipher1 import cipher
 def Euler_59():
+    cipher = []
+    with open('script/cipher1.txt') as f:
+        tmp = [i.split(',') for i in f.read().split('\n')[1:-1]]
+        cipher.extend(tmp)
+    cipher = [int(i) for i in cipher[0]]
     string =  'abcdefghijklmnopqrstuvwxyz'
     pwrds = [i+j+k for i in string for j in string for k in string]
     for p in pwrds:    

@@ -4,7 +4,7 @@ n+p = k**3/n**2
 m**3+p = k**3/m**6
 (m+1)**3 = k**3/m**6
 '''
-from maths import isprime2
+from script.maths import isprime2
 def e131(top = 10**6):
     i = 1
     j = 2

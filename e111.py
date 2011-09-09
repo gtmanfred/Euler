@@ -1,9 +1,9 @@
 #from allsieve import sieveOfEratosthenes as sieve
 from itertools import product,combinations
-from isprime import isprime
-from math2 import digits_to_number
+from script.isprime import isprime
+from script.math2 import digits_to_number
 import time
-from memorize import *
+from script.memorize import *
 def e111(n):
     pass
 @memo2of2

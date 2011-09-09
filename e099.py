@@ -1,5 +1,6 @@
 from math import log10
-alist = list(c for c in open('base_exp.txt').read().split('\n'))
+with open('script/base_exp.txt') as f:
+    alist = list(c for c in f.read().split('\n'))[1:-1]
 def Euler_99():
     maxi = 0
     maxval = 0

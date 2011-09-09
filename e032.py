@@ -1,4 +1,4 @@
-from maths import ispan
+from script.maths import ispan
 
 def Euler_32():
     a = set()

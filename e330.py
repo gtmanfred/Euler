@@ -1,7 +1,7 @@
 from math import *
-from maths import mullcm,primetree,factrec as fact
-from math2 import bicoeff as bc
-from memorize import memo
+from script.maths import mullcm,primetree,factrec as fact
+from script.math2 import bicoeff as bc
+from script.memorize import memo
 from fractions import Fraction as f
 def B():
     mat = [[]]*136

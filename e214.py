@@ -1,11 +1,11 @@
 from time import time
 from functools import reduce
 from operator import mul
-from maths import gcd,isprime2,isprime3
-#from allsieve import primesfrom2to as sieve
-from allsieve import sieveOfEratosthenes as sieve
-from memorize import *
-from helpers import totient as t1
+from script.maths import gcd,isprime2,isprime3
+#from script.allsieve import primesfrom2to as sieve
+from script.allsieve import soe as sieve
+from script.memorize import *
+from script.helpers import totient as t1
 def e214(n=25,t = 4*10**7):
     p = list(sieve(t))
     count = 0

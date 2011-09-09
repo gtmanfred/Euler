@@ -1,4 +1,4 @@
-import maths
+from script import maths
 def Euler_56(n = 100):
     alist = [a**b for a in range(100) for b in range(100)]
     print(len(alist))

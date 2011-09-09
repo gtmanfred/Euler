@@ -1,5 +1,5 @@
-import maths
-from maths import fact
+from script import maths
+from script.maths import fact
 def e020(num=100):
     return sum([int(i) for i in str(fact(num))])
 

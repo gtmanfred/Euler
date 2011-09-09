@@ -1,4 +1,4 @@
-from maths import *
+from script.maths import *
 from math import sqrt
 def Euler_125(top = 10**8):
     count = 0

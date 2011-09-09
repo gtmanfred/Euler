@@ -1,11 +1,10 @@
 from fractions import Fraction as frac
-from memorize import memo
-from helpers import totient as phi
-from maths import primetree,primesd3,isprime2,nextprime
+from script.memorize import memo
+from script.helpers import totient as phi
+from script.maths import primetree,primesd3,isprime2,nextprime
 from time import time
 from math import ceil
-from memorize import memo
-from maths import roots
+from script.maths import roots
 def e343(n = 2*10**6):
     alist = [1 + k**3 for k in range(n + 1)]
     primes = primesd3(n + 2)
@@ -54,7 +53,7 @@ def factors(n):
         return factors(n)#,primes)
 
 def test():
-    with open('f343.txt',encoding='utf-8') as afile:
+    with open('script/f343.txt',encoding='utf-8') as afile:
         f = afile.read()[:-1].split('\n') 
         flist = [i.split(':') for i in f if i!='']
         cache = {}

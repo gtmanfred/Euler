@@ -10,12 +10,12 @@ and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and
 
 Evaluate the sum of all the amicable numbers under 10000.
 '''
-import maths
+from script import maths
 def Euler_21(top =10000):
     pairs =set()
     for i in range(2,top+1):
-        j = maths.sums(maths.divs(i))
-        if  maths.sums(maths.divs(j))==i and i!=j:
+        j = sum(maths.divs(i))
+        if  sum(maths.divs(j))==i and i!=j:
             pairs.update({i,j})
             print([i, j])
     ret =maths.sums(pairs)

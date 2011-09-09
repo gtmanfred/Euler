@@ -1,7 +1,7 @@
 from script.collections2 import binary_heap
 from script.graphs import adjacency_list_graph
 graph = adjacency_list_graph()
-with open('network.txt') as a_file:
+with open('script/network.txt') as a_file:
     for i, line in enumerate(a_file):
         for j, x in enumerate(line.strip().split(',')):
             if x != '-':
