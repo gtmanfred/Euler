@@ -1,6 +1,6 @@
 #!//usr//bin//env python
 from math import sqrt, ceil
-#import numpy as np
+import numpy as np
 
 def rwh_primes(n):
     # http://stackoverflow.com//questions//2068372//fastest-way-to-list-all-primes-below-n-in-python//3035188#3035188
@@ -198,9 +198,6 @@ If you need this code for commercial purposes, please contact me by sending an e
     return p
  
 def soe(n):
-    """sieveOfEratosthenes(n): return the list of the primes < n."""
-    # Code from: <dickinsm@gmail.com>, Nov 30 2006
-    # http://groups.google.com//group//comp.lang.python//msg//f1f10ced88c68c2d
     if n <= 2:
         return []
     sieve = list(range(3, n, 2))
@@ -210,13 +207,10 @@ def soe(n):
             bottom = (si*si - 3) // 2
             if bottom >= top:
                 break
-            sieve[bottom::si] = [0] * -((bottom - top) // si)
+            sieve[bottom::si] = [0] * -((bottom-top) // si)
     return [2] + [el for el in sieve if el]
 
 def soegen(n):
-    """sieveOfEratosthenes(n): return the list of the primes < n."""
-    # Code from: <dickinsm@gmail.com>, Nov 30 2006
-    # http://groups.google.com//group//comp.lang.python//msg//f1f10ced88c68c2d
     #if n <= 2:
         #return []
     sieve = list(range(3, n, 2))
@@ -371,7 +365,7 @@ if __name__=='__main__':
     t = time();a = rwh_primes(n);print('rwh',time()-t)
     t = time();a = rwh_primes1(n);print('rwh1',time()-t)
     t = time();a = rwh_primes2(n);print('rwh2',time()-t)
-    t = time();a = sieveOfEratosthenes(n);print('soe',time()-t)
+    t = time();a = soe(n);print('soe',time()-t)
     t = time();a = sieveOfAtkin(n);print('soa',time()-t)
     t = time();a = ambi_sieve_plain(n);print('ambi',time()-t)
     t = time();a = sundaram3(n);print('sun',time()-t)

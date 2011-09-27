@@ -4,14 +4,14 @@ from maths import primesd,isprime2
 primesdict = primesd(10**4)
 p = [x for x in primesdict.keys() if primesdict.get(x) is 1]
 '''
-from sys import stderr
+#from sys import stderr
 from time import time
-#from script.maths import isprime2,primes,primesd,primesd3,isprime
-#from script.primes import *
-from script.isprime import isprime
-from script.allsieve import soe
+#from script.maths import isprime2#,primes,primesd,primesd3,isprime
+from script.primes import *
+#from script.isprime import isprime
+#from script.allsieve import soe
 t = time()
-#p = Primes(10**4)
+p = Primes(10**4)
 def Euler_60():
     for i in p.pList(10**4):
         print(i)
@@ -67,5 +67,5 @@ def e060():
 
 if __name__=='__main__':
     t = time()
-    print(e060(),time()-t)
-    #print(Euler_60(),time()-t)
+    #print(e060(),time()-t)
+    print(Euler_60(),time()-t)

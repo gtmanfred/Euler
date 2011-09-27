@@ -32,7 +32,7 @@ def ncr(n,r):
     xr = fact(r)
     nr = fact(n-r)
     ret = xn/(xr*nr)
-    return ret
+    return int(ret)
 
 def roots(p):
     """For p prime return all 0 <= x < p satisfying (1+x**3)%p == 0]"""
@@ -54,7 +54,7 @@ def nextprime(n):
         n += 2
     return n
 
-def gcd(a,b):
+def gcd(a,b=-1):
     if b ==0:return a
     else:return gcd(b,a%b)
 
@@ -92,6 +92,7 @@ def fact1(num):
     f = num
     if num == 0:
         return 1
+    if num==1:return 1
     for x in range(1,num):f = f*x
     return f
 

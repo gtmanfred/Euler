@@ -5,26 +5,29 @@ from functools import reduce
 from operator import mul
 def e204(top,n):
     print(cham(top,n))
-def cham(num,n):
-    aset = set([1])
-    exp = int(log(num)/log(2))
-    primes = soe(n+1)
-    count = 2
-    combos = [cwr(primes,i) for i in range(1,exp)]
-    for i in range(1,exp):
-        print(i*1.0/exp)
-        for combo in cwr(primes,i):
-            tmp = reduce(mul,combo)
-            if tmp<=num:
-                count+=1
-                #aset.add(tmp)
-            else:
-                tests = list(combo)[0]**len(combo)
-                if tests>num:
-                    print(combo,len(combo))
-                    break
-    print(count)
-    #return len(aset)+1
+def cham(top,n):
+    ret = 0
+    for i in range(1,top):
+        if test(i,n):
+            print(i)
+            yesno=1
+        else:
+            yesno=0
+        ret+=yesno
+    return ret
+def test(num,n):
+    p = soe(n+1)+[0]
+    j = 0
+    while p[j]!=0:
+        if num%p[j]==0:
+            num=num//p[j]
+        else:
+            j+=1
+    if num<n:
+        return True
+    else:
+        return False
+
 '''
 def test204(top,n):
     return len(ham(top,n))
@@ -52,4 +55,4 @@ if __name__=='__main__':
     if len(a)==3:
         print(cham(int(a[1]),int(a[2])))
     else:
-        print(cham(1000,5))
+        print(cham(10**8,5))

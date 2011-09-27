@@ -56,7 +56,7 @@ def S(N):
     print()
     return s
 if __name__=='__main__':
-    print(M(2,3,100))
-    print(M(3,5,100))
+    #print(M(2,3,100))
+    #print(M(3,5,100))
     print(S(100))
-    print(S(10000000))
+    #print(S(10000000))
