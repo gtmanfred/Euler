@@ -1,9 +1,9 @@
 from script.maths import mulgcd as gcd,mullcm as lcm
-from itertools import combinations_with_replacement as combos
+from itertools import permutations as combos#combinations_with_replacement as combos
 def e350():
     G = 10
     L = 100
-    N=3
+    N=2
     return f(G,L,N)
 
 def f(g,l,n):

@@ -1,4 +1,5 @@
 from collections import defaultdict
+from time import time
 from itertools import count
 from operator import mul
 from functools import reduce
@@ -104,3 +105,10 @@ def fsandexp(n,pfs=[]):
             pfs+=[i]
             #if n==1:return [i]
             return [i]+fsandexp(n,pfs)
+
+def measuretime(a):
+    start = time() 
+    a()
+    elapsed = time()
+    elapsed = elapsed - start
+    print("Time spent in (function name) is: ", elapsed)

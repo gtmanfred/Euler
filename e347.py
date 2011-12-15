@@ -47,13 +47,15 @@ def S(N):
         if tmp2!=p:
             mini=0
             tmp2=p
-            print()
         if q>mini:
             mini+=3000
-            print(p,q,end='\r')
+            #print(p,q,end='\r')
         t = M(p,q,N)
+        if t==0:
+            return s
+        else:
+            print(t)
         s+=t
-    print()
     return s
 if __name__=='__main__':
     #print(M(2,3,100))

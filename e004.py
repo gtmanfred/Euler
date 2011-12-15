@@ -33,4 +33,5 @@ def ispal1(num):
 
 if __name__=='__main__':
     print(e004())
+    #print(oneline())
     #print(Euler_4())
