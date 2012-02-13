@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 from script.helpers import measuretime
+from script.allsieve import soe
 '''
-from maths import primesd,isprime2
+from script.maths import primesd,isprime2,primesd3
 primesdict = primesd(10**4)
 p = [x for x in primesdict.keys() if primesdict.get(x) is 1]
 '''
@@ -30,7 +31,7 @@ def Euler_60():
                         isPrime(str(m)+str(l)) and isPrime(str(l)+str(m))))
                     if len(p4):return [i,j,k,l,p4[0],[i+j+k+l+p4[0]]]
 def e60():
-    x = primesd3(10**4)
+    x = primesd(10**4)
     print('{:>4}'.format('start'))
     for i in x:
         print(str(i))
@@ -46,7 +47,6 @@ def e60():
                     p4 = sorted(set(m for m in p3 if m>l and \
                         isprime2(str(m)+str(l)) and isprime2(str(l)+str(m))))
                     if len(p4):return [i,j,k,l,p4[0],[i+j+k+l+p4[0]]]
-@measuretime
 def e060():
     x = soe(10**4)
     print('{:>4}'.format('start'))
@@ -64,13 +64,12 @@ def e060():
                     p4 = sorted(set(m for m in p3 if m>l and \
                         isprime(str(m)+str(l)) and isprime(str(l)+str(m))))
                     if len(p4):
-                        print([i,j,k,l,p4[0],[i+j+k+l+p4[0]]])
-                        return 0;
+                        print( [i,j,k,l,p4[0],[i+j+k+l+p4[0]]])
+                        return 1
 
 
 
 
 if __name__=='__main__':
     t = time()
-    a = e060()#,time()-t)
-    #print(Euler_60(),time()-t)
+    a = e060()
